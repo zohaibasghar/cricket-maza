@@ -10,8 +10,8 @@ const MoreHome = () => {
   return (
     <Box w={"100%"} h={"100%"}>
       <VStack space={3}>
-        <VStack justifyContent={"center"} alignItems="center" bg="primary.400" h={"30%"}>
-          <Text fontSize="4xl">Settings</Text>
+        <VStack justifyContent={"flex-end"} alignItems="center" bg="primary.400" h={"15%"}>
+          <Text fontSize="3xl">Settings</Text>
         </VStack>
         {/* login card */}
         <Flex
