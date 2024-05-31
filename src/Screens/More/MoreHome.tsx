@@ -1,7 +1,8 @@
-import { Switch, View } from "react-native";
+import { Switch } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { VStack, Text, Box, Flex, HStack, Divider } from "native-base";
+import { Entypo } from "@expo/vector-icons";
 
 const MoreHome = () => {
   const nav = useNavigation();
@@ -10,11 +11,6 @@ const MoreHome = () => {
   return (
     <Box w={"100%"} h={"100%"}>
       <VStack space={3}>
-        <VStack justifyContent={"flex-end"} alignItems="center" bg="primary.400" h={"12%"}>
-          <Text mb={1} fontSize="3xl">
-            Settings
-          </Text>
-        </VStack>
         {/* login card */}
         <Flex
           direction="row"
@@ -51,7 +47,9 @@ const MoreHome = () => {
               For no ads and all features
             </Text>
           </Box>
-          <Text> "arrow icon" </Text>
+          <Text>
+            <Entypo name="home" size={22} color={"#fff"} />{" "}
+          </Text>
         </Flex>
         {/* Odds Section card */}
         <Flex

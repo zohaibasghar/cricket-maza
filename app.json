@@ -19,16 +19,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#5E41E6"
-      },
-      "package": "com.meharzohaib123.islandbank"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "983f9fde-ab4c-4f86-9935-5daf99c5325c"
-      }
     }
   }
 }

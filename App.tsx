@@ -1,35 +1,27 @@
 import "react-native-gesture-handler";
 import Main from "./src/Main";
-import { NavigationContainer } from "@react-navigation/native";
-import { NativeBaseProvider, extendTheme } from "native-base";
+import { DarkTheme, NavigationContainer } from "@react-navigation/native";
+import { NativeBaseProvider } from "native-base";
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import StoreProvider from "./src/redux/Store";
 import { StatusBar } from "expo-status-bar";
-const theme = extendTheme({
-  components: {
-    Input: {
-      defaultProps: {
-        rounded: "md",
-      },
-    },
-    Button: {
-      defaultProps: {
-        rounded: "full",
-        backgroundColor: "#5E41E6",
-        py: 4,
-        mb: 4,
-      },
-    },
+import customTheme from "./src/theme";
+
+const navigationTheme = {
+  dark: true,
+  colors: {
+    ...DarkTheme.colors,
+    background: "#000000",
   },
-});
+};
 export default function App() {
   return (
     <View style={styles.container}>
-      <NativeBaseProvider theme={theme} config={{ strictMode: "warn" }}>
+      <NativeBaseProvider theme={customTheme} config={{ strictMode: "warn" }}>
         <StoreProvider>
-          <NavigationContainer>
-            <StatusBar style="dark" animated />
+          <NavigationContainer theme={navigationTheme}>
+            <StatusBar style="light" animated />
             <Main />
           </NavigationContainer>
         </StoreProvider>
