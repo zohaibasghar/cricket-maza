@@ -10,8 +10,10 @@ const MoreHome = () => {
   return (
     <Box w={"100%"} h={"100%"}>
       <VStack space={3}>
-        <VStack justifyContent={"flex-end"} alignItems="center" bg="primary.400" h={"15%"}>
-          <Text fontSize="3xl">Settings</Text>
+        <VStack justifyContent={"flex-end"} alignItems="center" bg="primary.400" h={"12%"}>
+          <Text mb={1} fontSize="3xl">
+            Settings
+          </Text>
         </VStack>
         {/* login card */}
         <Flex
@@ -142,20 +144,31 @@ const MoreHome = () => {
           {/* Share */}
           <VStack alignItems={"center"}>
             <Text>Share Icon</Text>
-            <Text>SHARE</Text>
+            <Text fontWeight={700}>SHARE</Text>
           </VStack>
           <Divider orientation="vertical" />
           {/* About Us */}
           <VStack alignItems={"center"}>
             <Text>Aboutus Icon</Text>
-            <Text>About Us</Text>
+            <Text fontWeight={700}>About Us</Text>
           </VStack>
           <Divider orientation="vertical" />
           {/* Rate Us */}
           <VStack alignItems={"center"}>
             <Text>RateUs Icon</Text>
-            <Text>Rate Us</Text>
+            <Text fontWeight={700}>Rate Us</Text>
           </VStack>
+        </HStack>
+        {/* Follow Us On */}
+        <HStack justifyContent={"center"} alignItems={"center"} space={6} p={2}>
+          <Divider />
+          <Text fontWeight={700}> FOLLOW US ON</Text>
+          <Divider />
+        </HStack>
+        <HStack justifyContent={"center"} space={3}>
+          <Text fontWeight={700}> FB ICON</Text>
+          <Text fontWeight={700}> INSTA ICON</Text>
+          <Text fontWeight={700}> YT ICON</Text>
         </HStack>
       </VStack>
     </Box>
