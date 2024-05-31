@@ -18,7 +18,8 @@ const MoreHome = () => {
           direction="row"
           justifyContent={"space-between"}
           alignItems="center"
-          p={5}
+          px={5}
+          py={2}
           bg="primary.600"
         >
           <Box>
@@ -36,7 +37,8 @@ const MoreHome = () => {
           direction="row"
           justifyContent={"space-between"}
           alignItems="center"
-          p={4}
+          px={5}
+          py={2}
           bg="primary.600"
         >
           <Box>
@@ -54,7 +56,8 @@ const MoreHome = () => {
           direction="row"
           justifyContent={"space-between"}
           alignItems="center"
-          p={4}
+          px={5}
+          py={2}
           bg="primary.600"
         >
           <Box>
@@ -72,7 +75,8 @@ const MoreHome = () => {
           direction="row"
           justifyContent={"space-between"}
           alignItems="center"
-          p={4}
+          px={5}
+          py={2}
           bg="primary.600"
         >
           <Box>
@@ -90,7 +94,8 @@ const MoreHome = () => {
           direction="row"
           justifyContent={"space-between"}
           alignItems="center"
-          p={4}
+          px={5}
+          py={2}
           bg="primary.600"
         >
           <Box>
