@@ -1,7 +1,7 @@
 import { Switch, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { VStack, Text, Box, Flex, HStack } from "native-base";
+import { VStack, Text, Box, Flex, HStack, Divider } from "native-base";
 
 const MoreHome = () => {
   const nav = useNavigation();
@@ -137,6 +137,26 @@ const MoreHome = () => {
             <Text fontWeight={700}>Hindi</Text>
           </HStack>
         </Flex>
+        {/* Share this app */}
+        <HStack justifyContent={"center"} space={6}>
+          {/* Share */}
+          <VStack alignItems={"center"}>
+            <Text>Share Icon</Text>
+            <Text>SHARE</Text>
+          </VStack>
+          <Divider orientation="vertical" />
+          {/* About Us */}
+          <VStack alignItems={"center"}>
+            <Text>Aboutus Icon</Text>
+            <Text>About Us</Text>
+          </VStack>
+          <Divider orientation="vertical" />
+          {/* Rate Us */}
+          <VStack alignItems={"center"}>
+            <Text>RateUs Icon</Text>
+            <Text>Rate Us</Text>
+          </VStack>
+        </HStack>
       </VStack>
     </Box>
   );
