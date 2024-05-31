@@ -1,7 +1,7 @@
 import { Switch, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { VStack, Text, Box, Flex } from "native-base";
+import { VStack, Text, Box, Flex, HStack } from "native-base";
 
 const MoreHome = () => {
   const nav = useNavigation();
@@ -107,6 +107,35 @@ const MoreHome = () => {
             </Text>
           </Box>
           <Switch />
+        </Flex>
+        {/* Audio Commentary card */}
+        <Flex
+          direction="column"
+          justifyContent={"space-between"}
+          alignItems="center"
+          px={5}
+          py={2}
+          bg="primary.600"
+        >
+          <Flex direction="row" justifyContent={"space-between"} alignItems={"center"} w={"100%"}>
+            <VStack>
+              <Text fontWeight={500} color={"white"} fontSize={"md"}>
+                Audio Commentary
+              </Text>
+              <Text fontSize={"xs"} color={"white"}>
+                Speech Language
+              </Text>
+            </VStack>
+            <Text>Icon mute</Text>
+          </Flex>
+
+          <HStack alignItems={"center"} space={4}>
+            <Text fontWeight={700} color={"red.400"}>
+              English
+            </Text>
+            <Switch />
+            <Text fontWeight={700}>Hindi</Text>
+          </HStack>
         </Flex>
       </VStack>
     </Box>
