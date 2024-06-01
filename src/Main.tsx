@@ -44,7 +44,7 @@ const HomeTabs = () => {
         component={MoreHome}
         options={{
           headerStyle: { backgroundColor: "#5E41E6" },
-          headerTitle: "SETTING",
+          headerTitle: "SETTINGS",
           headerTitleAlign: "center",
           headerTitleStyle: { marginVertical: 12, fontStyle: "italic" },
         }}
