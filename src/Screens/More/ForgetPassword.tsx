@@ -40,7 +40,7 @@ const ForgetPassword = () => {
           </VStack>
         </FormControl>
 
-        <Button>LOGIN</Button>
+        <Button>SEND</Button>
       </VStack>
     </Box>
   );
