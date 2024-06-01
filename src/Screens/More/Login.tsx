@@ -1,14 +1,15 @@
 import { Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { VStack, Text, Box, FormControl, Input, Icon } from "native-base";
+import { VStack, Text, Box, FormControl, Input, Icon, Center, Button, HStack } from "native-base";
 import { Entypo, Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
+import { TouchableOpacity } from "react-native";
 
 const Login = () => {
   const nav = useNavigation();
   const [show, setShow] = useState(false);
   return (
-    <Box w={"100%"} h={"100%"} px={4} py={2}>
+    <Box flex={1} px={4} py={2}>
       <VStack space={3} justifyContent={"center"} h={"100%"}>
         {/* login card */}
         <VStack
@@ -23,10 +24,10 @@ const Login = () => {
           }}
         >
           <Box>
-            <Text fontWeight={500} color={"white"} fontSize={"md"}>
+            <Text fontWeight={500} color={"white"} fontSize={"lg"}>
               Login
             </Text>
-            <Text fontSize={"xs"} color={"white"}>
+            <Text fontSize={"sm"} color={"white"}>
               Please login to continue
             </Text>
           </Box>
@@ -66,6 +67,30 @@ const Login = () => {
               </VStack>
             </VStack>
           </FormControl>
+          <Center>
+            <TouchableOpacity>
+              <Text fontSize={"xs"}>FORGOT PASSWORD?</Text>
+            </TouchableOpacity>
+          </Center>
+          <Button
+            variant={"outline"}
+            // style={{ backgroundColor: "white" }}
+            // _text={{
+            //   color: "black",
+            // }}
+          >
+            LOGIN
+          </Button>
+          <Center>
+            <HStack space={1} justifyContent={"center"}>
+              <Text fontSize={"xs"}>Don't have an Account?</Text>
+              <TouchableOpacity>
+                <Text fontSize={"xs"} fontWeight={700}>
+                  Sign Up
+                </Text>
+              </TouchableOpacity>
+            </HStack>
+          </Center>
         </VStack>
       </VStack>
     </Box>
