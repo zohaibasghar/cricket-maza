@@ -3,8 +3,8 @@ import React from "react";
 
 const UpdatesHome = () => {
   return (
-    <View>
-      <Text>UpdatesHome</Text>
+    <View flex={1} alignItems={"center"} justifyContent={"center"}>
+      <Text>Coming soon...</Text>
     </View>
   );
 };

@@ -1,26 +1,7 @@
-import { Pressable, Switch } from "react-native";
-
+import { Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import {
-  VStack,
-  Text,
-  Box,
-  Flex,
-  HStack,
-  Divider,
-  FormControl,
-  Input,
-  Icon,
-  Spacer,
-} from "native-base";
-import {
-  AntDesign,
-  Entypo,
-  FontAwesome,
-  FontAwesome6,
-  Ionicons,
-  Octicons,
-} from "@expo/vector-icons";
+import { VStack, Text, Box, FormControl, Input, Icon } from "native-base";
+import { Entypo, Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 
 const Login = () => {
@@ -75,7 +56,7 @@ const Login = () => {
                     <Pressable onPress={() => setShow(!show)}>
                       <Icon
                         as={<Ionicons name={show ? "eye-sharp" : "eye-off"} color={"#fff"} />}
-                        size={4}
+                        size={5}
                         mr="2"
                         color="#fff"
                       />

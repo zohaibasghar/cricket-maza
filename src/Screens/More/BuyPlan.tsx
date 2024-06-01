@@ -1,7 +1,7 @@
 import { View, Text } from "native-base";
 import React from "react";
 
-const LiveHome = () => {
+const BuyPlan = () => {
   return (
     <View flex={1} alignItems={"center"} justifyContent={"center"}>
       <Text>Coming soon...</Text>
@@ -9,4 +9,4 @@ const LiveHome = () => {
   );
 };
 
-export default LiveHome;
+export default BuyPlan;

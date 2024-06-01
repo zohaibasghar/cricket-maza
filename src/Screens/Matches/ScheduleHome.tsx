@@ -3,8 +3,8 @@ import React from "react";
 
 const ScheduleHome = () => {
   return (
-    <View>
-      <Text>ScheduleHome</Text>
+    <View flex={1} alignItems={"center"} justifyContent={"center"}>
+      <Text>Coming soon...</Text>
     </View>
   );
 };
