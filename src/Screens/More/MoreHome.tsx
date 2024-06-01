@@ -1,4 +1,4 @@
-import { Switch } from "react-native";
+import { Pressable, Switch } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 import { VStack, Text, Box, Flex, HStack, Divider } from "native-base";
@@ -13,32 +13,29 @@ const MoreHome = () => {
     <Box w={"100%"} h={"100%"} px={4} py={2}>
       <VStack space={3}>
         {/* login card */}
-        <Flex
-          direction="row"
-          justifyContent={"space-between"}
-          alignItems="center"
-          px={5}
-          py={2}
-          bg="#7e66eb"
-          style={{
-            borderRadius: 12,
-          }}
-        >
-          <Box>
-            <Text fontWeight={500} color={"white"} fontSize={"md"}>
-              Login
-            </Text>
-            <Text fontSize={"xs"} color={"white"}>
-              Press login to continue
-            </Text>
-          </Box>
-          <AntDesign
-            name="swapright"
-            size={22}
-            color={"#fff"}
-            onPress={() => nav.navigate("MoreStack", { screen: "Login" })}
-          />
-        </Flex>
+        <Pressable onPress={() => nav.navigate("MoreStack", { screen: "Login" })}>
+          <Flex
+            direction="row"
+            justifyContent={"space-between"}
+            alignItems="center"
+            px={5}
+            py={2}
+            bg="#7e66eb"
+            style={{
+              borderRadius: 12,
+            }}
+          >
+            <Box>
+              <Text fontWeight={500} color={"white"} fontSize={"md"}>
+                Login
+              </Text>
+              <Text fontSize={"xs"} color={"white"}>
+                Press login to continue
+              </Text>
+            </Box>
+            <AntDesign name="swapright" size={22} color={"#fff"} />
+          </Flex>
+        </Pressable>
         {/* Buy Plan card */}
         <Flex
           direction="row"
