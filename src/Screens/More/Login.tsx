@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { VStack, Text, Box, FormControl, Input, Icon, Center, Button, HStack } from "native-base";
-import { Entypo, Ionicons } from "@expo/vector-icons";
+import { Entypo, Ionicons, SimpleLineIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { TouchableOpacity } from "react-native";
 
@@ -35,8 +35,11 @@ const Login = () => {
             <VStack>
               <FormControl.Label>Email</FormControl.Label>
               <Input
-                InputLeftElement={
-                  <Icon as={<Entypo name="email" color={"#fff"} />} size={4} ml="2" color="#fff" />
+                // InputLeftElement={
+                //   <Icon as={<Entypo name="email" size={24} />} ml="2" color="#fff" />
+                // }
+                leftElement={
+                  <Entypo name="email" size={24} color="white" style={{ marginLeft: 12 }} />
                 }
                 placeholder="Name"
               />
@@ -44,8 +47,11 @@ const Login = () => {
             <VStack>
               <FormControl.Label>Password</FormControl.Label>
               <Input
-                placeholder="********"
+                placeholder="Password"
                 type={show ? "text" : "password"}
+                leftElement={
+                  <SimpleLineIcons name="lock" size={24} color="white" style={{ marginLeft: 12 }} />
+                }
                 InputRightElement={
                   <TouchableOpacity onPress={() => setShow(!show)}>
                     <Icon
