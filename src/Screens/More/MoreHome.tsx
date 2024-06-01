@@ -2,14 +2,14 @@ import { Switch } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { VStack, Text, Box, Flex, HStack, Divider } from "native-base";
-import { Entypo } from "@expo/vector-icons";
+import { AntDesign, Entypo, FontAwesome, FontAwesome6 } from "@expo/vector-icons";
 
 const MoreHome = () => {
   const nav = useNavigation();
 
   // nav.navigate("MoreStack", { screen: "Login" });
   return (
-    <Box w={"100%"} h={"100%"}>
+    <Box w={"100%"} h={"100%"} px={4} py={2}>
       <VStack space={3}>
         {/* login card */}
         <Flex
@@ -18,7 +18,10 @@ const MoreHome = () => {
           alignItems="center"
           px={5}
           py={2}
-          bg="primary.600"
+          bg="#6e54e8"
+          style={{
+            borderRadius: 12,
+          }}
         >
           <Box>
             <Text fontWeight={500} color={"white"} fontSize={"md"}>
@@ -28,7 +31,7 @@ const MoreHome = () => {
               Press signin to continue
             </Text>
           </Box>
-          <Text> "arrow icon" </Text>
+          <AntDesign name="rightsquare" size={22} color={"#fff"} />
         </Flex>
         {/* Buy Plan card */}
         <Flex
@@ -37,7 +40,10 @@ const MoreHome = () => {
           alignItems="center"
           px={5}
           py={2}
-          bg="primary.600"
+          bg="#6e54e8"
+          style={{
+            borderRadius: 12,
+          }}
         >
           <Box>
             <Text fontWeight={500} color={"white"} fontSize={"md"}>
@@ -58,7 +64,10 @@ const MoreHome = () => {
           alignItems="center"
           px={5}
           py={2}
-          bg="primary.600"
+          bg="#6e54e8"
+          style={{
+            borderRadius: 12,
+          }}
         >
           <Box>
             <Text fontWeight={500} color={"white"} fontSize={"md"}>
@@ -77,7 +86,10 @@ const MoreHome = () => {
           alignItems="center"
           px={5}
           py={2}
-          bg="primary.600"
+          bg="#6e54e8"
+          style={{
+            borderRadius: 12,
+          }}
         >
           <Box>
             <Text fontWeight={500} color={"white"} fontSize={"md"}>
@@ -96,7 +108,10 @@ const MoreHome = () => {
           alignItems="center"
           px={5}
           py={2}
-          bg="primary.600"
+          bg="#6e54e8"
+          style={{
+            borderRadius: 12,
+          }}
         >
           <Box>
             <Text fontWeight={500} color={"white"} fontSize={"md"}>
@@ -115,7 +130,10 @@ const MoreHome = () => {
           alignItems="center"
           px={5}
           py={2}
-          bg="primary.600"
+          bg="#6e54e8"
+          style={{
+            borderRadius: 12,
+          }}
         >
           <Flex direction="row" justifyContent={"space-between"} alignItems={"center"} w={"100%"}>
             <VStack>
@@ -130,30 +148,30 @@ const MoreHome = () => {
           </Flex>
 
           <HStack alignItems={"center"} space={4}>
-            <Text fontWeight={700} color={"red.400"}>
+            <Text fontWeight={700} color={"green.500"}>
               English
             </Text>
             <Switch />
-            <Text fontWeight={700}>Hindi</Text>
+            <Text fontWeight={500}>Hindi</Text>
           </HStack>
         </Flex>
         {/* Share this app */}
         <HStack justifyContent={"center"} space={6}>
           {/* Share */}
           <VStack alignItems={"center"}>
-            <Text>Share Icon</Text>
+            <Entypo name="share" size={22} color={"#fff"} />
             <Text fontWeight={700}>SHARE</Text>
           </VStack>
           <Divider orientation="vertical" />
           {/* About Us */}
           <VStack alignItems={"center"}>
-            <Text>Aboutus Icon</Text>
+            <FontAwesome6 name="circle-info" size={22} color={"#fff"} />
             <Text fontWeight={700}>About Us</Text>
           </VStack>
           <Divider orientation="vertical" />
           {/* Rate Us */}
           <VStack alignItems={"center"}>
-            <Text>RateUs Icon</Text>
+            <FontAwesome name="star-half-o" size={22} color={"#fff"} />
             <Text fontWeight={700}>Rate Us</Text>
           </VStack>
         </HStack>
@@ -163,10 +181,10 @@ const MoreHome = () => {
           <Text fontWeight={700}> FOLLOW US ON</Text>
           <Divider />
         </HStack>
-        <HStack justifyContent={"center"} space={3}>
-          <Text fontWeight={700}> FB ICON</Text>
-          <Text fontWeight={700}> INSTA ICON</Text>
-          <Text fontWeight={700}> YT ICON</Text>
+        <HStack justifyContent={"center"} space={8}>
+          <FontAwesome6 name="facebook" size={26} color={"#fff"} />
+          <FontAwesome6 name="square-instagram" size={26} color={"#fff"} />
+          <Entypo name="youtube-with-circle" size={26} color={"#fff"} />
         </HStack>
       </VStack>
     </Box>
