@@ -1,6 +1,13 @@
 import { useNavigation } from "@react-navigation/native";
 import { VStack, Text, Box, Flex, HStack, Divider, Switch, ScrollView } from "native-base";
-import { MaterialIcons, Entypo, FontAwesome, FontAwesome6, Octicons } from "@expo/vector-icons";
+import {
+  MaterialIcons,
+  Entypo,
+  FontAwesome,
+  FontAwesome6,
+  Octicons,
+  FontAwesome5,
+} from "@expo/vector-icons";
 import { useState } from "react";
 import { TouchableOpacity } from "react-native";
 
@@ -192,10 +199,10 @@ const MoreHome = () => {
             <Text fontWeight={700}> FOLLOW US ON</Text>
             <Divider />
           </HStack>
-          <HStack justifyContent={"space-between"} mx={16}>
-            <FontAwesome6 name="facebook" size={32} color={"#fff"} />
-            <FontAwesome6 name="square-instagram" size={32} color={"#fff"} />
-            <Entypo name="youtube-with-circle" size={32} color={"#fff"} />
+          <HStack justifyContent={"space-between"} alignContent={"center"} mx={16} mb={2}>
+            <FontAwesome6 name="facebook" size={32} color={"#1877F2"} />
+            <FontAwesome5 name="instagram" size={32} color="rgb(214,41,118)" />
+            <Entypo name="youtube-with-circle" size={32} color={"#FF0000"} />
           </HStack>
         </VStack>
       </ScrollView>
