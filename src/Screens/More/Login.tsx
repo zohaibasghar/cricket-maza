@@ -35,13 +35,10 @@ const Login = () => {
             <VStack>
               <FormControl.Label>Email</FormControl.Label>
               <Input
-                // InputLeftElement={
-                //   <Icon as={<Entypo name="email" size={24} />} ml="2" color="#fff" />
-                // }
                 leftElement={
                   <Entypo name="email" size={24} color="white" style={{ marginLeft: 12 }} />
                 }
-                placeholder="Name"
+                placeholder="johndoe@example.com"
               />
             </VStack>
             <VStack>
