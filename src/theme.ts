@@ -5,6 +5,9 @@ const customTheme = extendTheme({
     Input: {
       defaultProps: {
         rounded: "md",
+        borderWidth: 1,
+        borderColor: "#dadada",
+        placeholderTextColor: "#d3d3d3",
       },
     },
     Text: {
@@ -15,9 +18,8 @@ const customTheme = extendTheme({
     Button: {
       defaultProps: {
         rounded: "full",
-        backgroundColor: "red",
-        py: 4,
-        mb: 4,
+        backgroundColor: "#5E41E6",
+        my: 4,
       },
     },
   },

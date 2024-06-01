@@ -2,6 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "../Screens/More/Login";
 import BuyPlan from "../Screens/More/BuyPlan";
+import Signup from "../Screens/More/Signup";
 
 const Stack = createStackNavigator();
 const MoreStack = () => {
@@ -14,7 +15,8 @@ const MoreStack = () => {
       }}
     >
       <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="BuyPlan" component={BuyPlan} options={{ headerTitle: "Buy Plan" }} />
+      <Stack.Screen name="BuyPlan" component={BuyPlan} options={{ headerTitle: "BUY PLAN" }} />
+      <Stack.Screen name="Signup" component={Signup} options={{headerTitle:"SIGN UP"}}/>
     </Stack.Navigator>
   );
 };
