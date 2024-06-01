@@ -1,12 +1,13 @@
 import { Switch } from "react-native";
-import React from "react";
+
 import { useNavigation } from "@react-navigation/native";
 import { VStack, Text, Box, Flex, HStack, Divider } from "native-base";
-import { AntDesign, Entypo, FontAwesome, FontAwesome6 } from "@expo/vector-icons";
+import { AntDesign, Entypo, FontAwesome, FontAwesome6, Octicons } from "@expo/vector-icons";
+import { useState } from "react";
 
 const MoreHome = () => {
   const nav = useNavigation();
-
+  const [toggleAudio, setToggleAudio] = useState(false);
   // nav.navigate("MoreStack", { screen: "Login" });
   return (
     <Box w={"100%"} h={"100%"} px={4} py={2}>
@@ -31,7 +32,7 @@ const MoreHome = () => {
               Press signin to continue
             </Text>
           </Box>
-          <AntDesign name="rightsquare" size={22} color={"#fff"} />
+          <AntDesign name="swapright" size={22} color={"#fff"} />
         </Flex>
         {/* Buy Plan card */}
         <Flex
@@ -144,9 +145,18 @@ const MoreHome = () => {
                 Speech Language
               </Text>
             </VStack>
-            <Text>Icon mute</Text>
+            {toggleAudio ? (
+              <Octicons
+                name="unmute"
+                size={22}
+                color={"#fff"}
+                onPress={() => setToggleAudio(false)}
+              />
+            ) : (
+              <Octicons name="mute" size={22} color={"#fff"} onPress={() => setToggleAudio(true)} />
+            )}
+            {/* <Octicons name="unmute" size={22} color={"#fff"} /> */}
           </Flex>
-
           <HStack alignItems={"center"} space={4}>
             <Text fontWeight={700} color={"green.500"}>
               English
