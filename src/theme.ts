@@ -5,6 +5,7 @@ const customTheme = extendTheme({
     Input: {
       defaultProps: {
         rounded: "md",
+        p: 4,
         borderWidth: 1,
         borderColor: "#dadada",
         placeholderTextColor: "#d3d3d3",

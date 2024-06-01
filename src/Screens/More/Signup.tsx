@@ -12,24 +12,20 @@ const Signup = () => {
       <VStack space={4} py={4}>
         <Text fontStyle={"italic"}>Create Your Account</Text>
         <Input
-          p={4}
           placeholder="Name"
           leftElement={<AntDesign style={{ marginLeft: 12 }} name="user" size={24} color="white" />}
         />
         <Input
-          p={4}
           placeholder="Email"
           leftElement={<AntDesign name="mail" size={24} color="white" style={{ marginLeft: 12 }} />}
         />
         <Input
-          p={4}
           placeholder="Mobile Number"
           leftElement={
             <AntDesign name="mobile1" size={24} color="white" style={{ marginLeft: 12 }} />
           }
         />
         <Input
-          p={4}
           placeholder="Password"
           type={show ? "text" : "password"}
           leftElement={

@@ -20,7 +20,7 @@ const MoreHome = () => {
               alignItems="center"
               px={5}
               py={2}
-              bg="#7e66eb"
+              bg="#222"
               style={{
                 borderRadius: 12,
               }}
@@ -44,7 +44,7 @@ const MoreHome = () => {
               alignItems="center"
               px={5}
               py={2}
-              bg="#7e66eb"
+              bg="#222"
               style={{
                 borderRadius: 12,
               }}
@@ -67,7 +67,7 @@ const MoreHome = () => {
             alignItems="center"
             px={5}
             py={2}
-            bg="#7e66eb"
+            bg="#222"
             style={{
               borderRadius: 12,
             }}
@@ -89,7 +89,7 @@ const MoreHome = () => {
             alignItems="center"
             px={5}
             py={2}
-            bg="#7e66eb"
+            bg="#222"
             style={{
               borderRadius: 12,
             }}
@@ -111,7 +111,7 @@ const MoreHome = () => {
             alignItems="center"
             px={5}
             py={2}
-            bg="#7e66eb"
+            bg="#222"
             style={{
               borderRadius: 12,
             }}
@@ -133,7 +133,8 @@ const MoreHome = () => {
             alignItems="center"
             px={5}
             py={2}
-            bg="#7e66eb"
+            mb={4}
+            bg="#222"
             style={{
               borderRadius: 12,
             }}

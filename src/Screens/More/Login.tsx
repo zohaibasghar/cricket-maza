@@ -1,4 +1,3 @@
-import { Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { VStack, Text, Box, FormControl, Input, Icon, Center, Button, HStack } from "native-base";
 import { Entypo, Ionicons } from "@expo/vector-icons";
@@ -23,10 +22,10 @@ const Login = () => {
         }}
       >
         <Box>
-          <Text fontWeight={500} color={"white"} fontSize={"lg"}>
+          <Text fontWeight={500} color={"white"} fontSize={"lg"} fontStyle={"italic"}>
             Login
           </Text>
-          <Text fontSize={"sm"} color={"white"}>
+          <Text fontSize={"sm"} color={"white"} fontStyle={"italic"}>
             Please login to continue
           </Text>
         </Box>
@@ -48,14 +47,14 @@ const Login = () => {
                 placeholder="********"
                 type={show ? "text" : "password"}
                 InputRightElement={
-                  <Pressable onPress={() => setShow(!show)}>
+                  <TouchableOpacity onPress={() => setShow(!show)}>
                     <Icon
                       as={<Ionicons name={show ? "eye-sharp" : "eye-off"} color={"#fff"} />}
                       size={5}
                       mr="2"
                       color="#fff"
                     />
-                  </Pressable>
+                  </TouchableOpacity>
                 }
               />
             </VStack>
