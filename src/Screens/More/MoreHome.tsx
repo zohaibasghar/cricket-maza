@@ -19,7 +19,7 @@ const MoreHome = () => {
           alignItems="center"
           px={5}
           py={2}
-          bg="#6e54e8"
+          bg="#7e66eb"
           style={{
             borderRadius: 12,
           }}
@@ -32,7 +32,12 @@ const MoreHome = () => {
               Press signin to continue
             </Text>
           </Box>
-          <AntDesign name="swapright" size={22} color={"#fff"} />
+          <AntDesign
+            name="swapright"
+            size={22}
+            color={"#fff"}
+            onPress={() => nav.navigate("MoreStack", { screen: "Login" })}
+          />
         </Flex>
         {/* Buy Plan card */}
         <Flex
@@ -41,7 +46,7 @@ const MoreHome = () => {
           alignItems="center"
           px={5}
           py={2}
-          bg="#6e54e8"
+          bg="#7e66eb"
           style={{
             borderRadius: 12,
           }}
@@ -65,7 +70,7 @@ const MoreHome = () => {
           alignItems="center"
           px={5}
           py={2}
-          bg="#6e54e8"
+          bg="#7e66eb"
           style={{
             borderRadius: 12,
           }}
@@ -87,7 +92,7 @@ const MoreHome = () => {
           alignItems="center"
           px={5}
           py={2}
-          bg="#6e54e8"
+          bg="#7e66eb"
           style={{
             borderRadius: 12,
           }}
@@ -109,7 +114,7 @@ const MoreHome = () => {
           alignItems="center"
           px={5}
           py={2}
-          bg="#6e54e8"
+          bg="#7e66eb"
           style={{
             borderRadius: 12,
           }}
@@ -131,7 +136,7 @@ const MoreHome = () => {
           alignItems="center"
           px={5}
           py={2}
-          bg="#6e54e8"
+          bg="#7e66eb"
           style={{
             borderRadius: 12,
           }}
