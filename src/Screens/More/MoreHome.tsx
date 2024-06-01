@@ -29,7 +29,7 @@ const MoreHome = () => {
               Login
             </Text>
             <Text fontSize={"xs"} color={"white"}>
-              Press signin to continue
+              Press login to continue
             </Text>
           </Box>
           <AntDesign
