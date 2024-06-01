@@ -67,7 +67,7 @@ const Login = () => {
           </VStack>
         </FormControl>
         <Center>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => nav.navigate("ForgetPassword" as never)}>
             <Text fontSize={"xs"}>FORGOT PASSWORD?</Text>
           </TouchableOpacity>
         </Center>
