@@ -35,7 +35,11 @@ const HomeTabs = () => {
         tabBarLabelStyle: { marginBottom: 4, fontSize: 11 },
       })}
     >
-      <Tab.Screen name="Dashboard" component={Dashboard} options={{ tabBarLabel: "Home" }} />
+      <Tab.Screen
+        name="Dashboard"
+        component={Dashboard}
+        options={{ tabBarLabel: "Home", headerShown: false }}
+      />
       <Tab.Screen name="Updates" component={UpdatesHome} />
       <Tab.Screen name="Live" component={LiveHome} />
       <Tab.Screen name="Matches" component={ScheduleHome} />
