@@ -11,7 +11,9 @@
       "resizeMode": "cover",
       "backgroundColor": "#5E41E6"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -19,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#5E41E6"
-      }
+      },
+      "package": "com.meharzohaib123.cricketmaza"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "71e86241-72f8-45a2-82c1-96a0cd1d1bb2"
+      }
     }
   }
 }
