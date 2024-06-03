@@ -6,15 +6,7 @@ const MatchCard = ({ team1, team2, percentage1, percentage2, score1, score2, mat
   const formattedTime = formatDistanceToNow(new Date(matchTime), { addSuffix: true });
   const formattedDateTime = format(new Date(matchTime), "EEE hh:mm a '•' dd MMM");
   return (
-    <Box
-      borderRadius="md"
-      overflow="hidden"
-      borderColor="coolGray.200"
-      borderWidth="1"
-      m="2"
-      p="4"
-      bg="#222"
-    >
+    <Box borderRadius="lg" overflow="hidden" borderColor="#5E41E6" borderWidth="1" m="2" p="4" mx={4}>
       <VStack space={1}>
         <Text fontSize="lg" bold textAlign={"center"} letterSpacing={-1}>
           MENS T20 WORLD CUP 2024

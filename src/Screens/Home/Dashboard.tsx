@@ -5,6 +5,7 @@ import MatchCard from "../../Components/MatchCard";
 import TrendingSeries from "../../Components/TrendingSeries";
 import LatestVideos from "../../Components/LatestVideos";
 import Headlines from "../../Components/Headlines";
+import Header from "../../Components/Header";
 const matchData = {
   team1: {
     name: "SL",
@@ -25,6 +26,7 @@ const Dashboard = () => {
   return (
     <View flex={1}>
       <ScrollView>
+        <Header />
         <MatchCard
           team1={matchData.team1}
           team2={matchData.team2}
