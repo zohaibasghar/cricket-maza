@@ -6,12 +6,20 @@ const MatchCard = ({ team1, team2, percentage1, percentage2, score1, score2, mat
   const formattedTime = formatDistanceToNow(new Date(matchTime), { addSuffix: true });
   const formattedDateTime = format(new Date(matchTime), "EEE hh:mm a '•' dd MMM");
   return (
-    <Box borderRadius="lg" overflow="hidden" borderColor="#5E41E6" borderWidth="1" m="2" p="4" mx={4}>
+    <Box
+      borderRadius="lg"
+      overflow="hidden"
+      borderColor="#5E41E6"
+      borderWidth="1"
+      m="2"
+      p="4"
+      mx={4}
+    >
       <VStack space={1}>
-        <Text fontSize="lg" bold textAlign={"center"} letterSpacing={-1}>
+        <Text fontSize="lg" bold textAlign={"center"} letterSpacing={-1} color={"white"}>
           MENS T20 WORLD CUP 2024
         </Text>
-        <Text fontSize="2xs" textAlign={"center"} color={"gray.400"}>
+        <Text fontSize="2xs" textAlign={"center"} color={"white"}>
           4th Match T20, United States • {formattedDateTime}
         </Text>
         <HStack space={2} justifyContent="space-between" alignItems="center">
@@ -23,7 +31,7 @@ const MatchCard = ({ team1, team2, percentage1, percentage2, score1, score2, mat
               rounded={"full"}
             />
             <Text>{team1.name}</Text>
-            <Text color="coolGray.600">{percentage1}%</Text>
+            <Text color={"white"}>{percentage1}%</Text>
           </VStack>
           <Text fontSize="lg">vs</Text>
           <VStack space={1} alignItems="center">
@@ -34,7 +42,7 @@ const MatchCard = ({ team1, team2, percentage1, percentage2, score1, score2, mat
               rounded={"full"}
             />
             <Text>{team2.name}</Text>
-            <Text color="coolGray.600">{percentage2}%</Text>
+            <Text color="white">{percentage2}%</Text>
           </VStack>
         </HStack>
         <HStack space={2} justifyContent="space-between" alignItems="center">
@@ -47,7 +55,7 @@ const MatchCard = ({ team1, team2, percentage1, percentage2, score1, score2, mat
             <Text textAlign="center">{score2}</Text>
           </Box>
         </HStack>
-        <Text textAlign="center" color="coolGray.600">
+        <Text textAlign="center" color="coolGray.600" color={"#5E41E6"}s>
           STARTING IN: in about 7 hours
         </Text>
       </VStack>
