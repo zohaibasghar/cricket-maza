@@ -3,7 +3,7 @@ import { Box, VStack, HStack, Text, Progress, Image } from "native-base";
 import { format, formatDistanceToNow } from "date-fns";
 
 const MatchCard = ({ team1, team2, percentage1, percentage2, score1, score2, matchTime }: any) => {
-  const formattedTime = formatDistanceToNow(new Date(matchTime), { addSuffix: true });
+  // const formattedTime = formatDistanceToNow(new Date(matchTime), { addSuffix: true });
   const formattedDateTime = format(new Date(matchTime), "EEE hh:mm a '•' dd MMM");
   return (
     <Box
@@ -55,7 +55,7 @@ const MatchCard = ({ team1, team2, percentage1, percentage2, score1, score2, mat
             <Text textAlign="center">{score2}</Text>
           </Box>
         </HStack>
-        <Text textAlign="center" color="coolGray.600" color={"#5E41E6"}s>
+        <Text textAlign="center" color="coolGray.600" color={"#5E41E6"} s>
           STARTING IN: in about 7 hours
         </Text>
       </VStack>
