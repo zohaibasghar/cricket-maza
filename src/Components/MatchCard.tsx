@@ -55,7 +55,7 @@ const MatchCard = ({ team1, team2, percentage1, percentage2, score1, score2, mat
             <Text textAlign="center">{score2}</Text>
           </Box>
         </HStack>
-        <Text textAlign="center" color="coolGray.600" color={"#5E41E6"} s>
+        <Text textAlign="center" color={"#5E41E6"}>
           STARTING IN: in about 7 hours
         </Text>
       </VStack>
