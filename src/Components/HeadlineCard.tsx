@@ -3,18 +3,28 @@ import React from "react";
 
 const HeadlineCard = () => {
   return (
-    <View borderColor={"#5E41E6"} borderWidth={1} rounded={"lg"} w={'195'}>
+    <View
+      borderColor={"#5E41E6"}
+      borderWidth={1}
+      rounded={"lg"}
+      w={"46%"}
+      m={2}
+      overflow={"hidden"}
+    >
       <VStack>
         <Image
           source={{
-            uri: "https://static.toiimg.com/thumb/msid-94935907,width-400,resizemode-4/94935907.jpg",
+            uri: "https://c4.wallpaperflare.com/wallpaper/246/739/689/digital-digital-art-artwork-illustration-abstract-hd-wallpaper-preview.jpg",
           }}
           alt="Cricket"
-          w={"100%"}
-          h={150}
+          style={{ objectFit: "cover", width: "100%", height: 150 }}
         />
-        <Text px={2} pt={2}>Brits set to make comeback on india</Text>
-        <Text px={2} pb={2} fontSize={'2xs'} color={"#5E41E6"}>01 Jun 2024 • 10:30 AM, Sat</Text>
+        <Text px={2} pt={2}>
+          Brits set to make comeback on india
+        </Text>
+        <Text px={2} pb={2} fontSize={"2xs"} color={"#5E41E6"}>
+          01 Jun 2024 • 10:30 AM, Sat
+        </Text>
       </VStack>
     </View>
   );

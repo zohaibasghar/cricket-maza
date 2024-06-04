@@ -1,10 +1,10 @@
-import { useNavigation } from "@react-navigation/native";
-import { View, Text, ScrollView, HStack, VStack, FlatList } from "native-base";
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { HStack, ScrollView, Text, VStack, View } from "native-base";
 import Header from "../../Components/Header";
 import { TouchableOpacity } from "react-native";
 import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
-import HeadlineCard from "../../Components/HeadlineCard";
+import VideoComp from "../../Components/VideoComp";
 
 const list = [
   "All",
@@ -13,8 +13,9 @@ const list = [
   "Pakistan Super League 8",
   "Indian Premier League",
 ];
+const ScrollData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-const UpdatesHome = () => {
+const AllVideos = () => {
   const nav = useNavigation();
   const [SelectedLabel, setSelectedLabel] = useState(list[0]);
   return (
@@ -25,7 +26,7 @@ const UpdatesHome = () => {
             <FontAwesome5 name="chevron-left" size={24} color="white" />
           </TouchableOpacity>
         }
-        center={"UPDATES"}
+        center={"ALL VIDEOS"}
         right={<AntDesign name="sharealt" size={24} color="white" />}
       />
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
@@ -50,14 +51,15 @@ const UpdatesHome = () => {
           ))}
         </HStack>
       </ScrollView>
-      <FlatList
-        data={[1, 2, 3, 4, 5, 6]}
-        renderItem={() => <HeadlineCard />}
-        numColumns={2}
-        keyExtractor={(item) => item.toString()}
-      />
+      <ScrollView>
+        <VStack space={3} my={4}>
+          {ScrollData.map((_, index) => (
+            <VideoComp key={index}/>
+          ))}
+        </VStack>
+      </ScrollView>
     </View>
   );
 };
 
-export default UpdatesHome;
+export default AllVideos;

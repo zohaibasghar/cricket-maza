@@ -12,9 +12,11 @@ const SeriesCard = () => {
       space={1}
       alignItems={"center"}
     >
-      <HStack alignItems={"center"} space={1}>
+      <HStack alignItems={"center"} space={2}>
         <Image
-          source={require("../../assets/icon.png")}
+          source={{
+            uri: "https://c4.wallpaperflare.com/wallpaper/246/739/689/digital-digital-art-artwork-illustration-abstract-hd-wallpaper-preview.jpg",
+          }}
           alt="Country"
           w={"10"}
           h={"10"}
@@ -30,15 +32,23 @@ const SeriesCard = () => {
       <HStack space={1} alignItems={"center"}>
         <Text fontSize={"xl"}>55</Text>
         <VStack>
-          <Text fontSize={6} color={'gray.300'}>Total</Text>
-          <Text fontSize={6} color={'gray.300'}>Matches</Text>
+          <Text fontSize={6} color={"gray.300"}>
+            Total
+          </Text>
+          <Text fontSize={6} color={"gray.300"}>
+            Matches
+          </Text>
         </VStack>
       </HStack>
       <HStack space={1} alignItems={"center"}>
         <Text fontSize={"xl"}>52</Text>
         <VStack>
-          <Text fontSize={6} color={'gray.300'}>Matches</Text>
-          <Text fontSize={6} color={'gray.300'}>Left</Text>
+          <Text fontSize={6} color={"gray.300"}>
+            Matches
+          </Text>
+          <Text fontSize={6} color={"gray.300"}>
+            Left
+          </Text>
         </VStack>
       </HStack>
     </HStack>

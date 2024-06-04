@@ -3,13 +3,15 @@ import React from "react";
 import { TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import VideoComp from "./VideoComp";
+import { useNavigation } from "@react-navigation/native";
 
 const LatestVideos = () => {
+  const nav = useNavigation();
   return (
     <View>
       <HStack alignItems={"center"} justifyContent={"space-between"} w={"93%"} mx={4} mb={2}>
         <Text bold>LATEST VIDEOS</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => nav.navigate("HomeStack", { screen: "AllVideos" })}>
           <HStack alignItems={"center"}>
             <Text fontSize={"xs"} fontStyle={"italic"}>
               VIEW ALL
@@ -23,9 +25,9 @@ const LatestVideos = () => {
         horizontal
         showsHorizontalScrollIndicator={false}
       >
-        <VideoComp />
-        <VideoComp />
-        <VideoComp />
+        <VideoComp width={"300"} height={"150"} />
+        <VideoComp width={"300"} height={"150"} />
+        <VideoComp width={"300"} height={"150"} />
       </ScrollView>
     </View>
   );

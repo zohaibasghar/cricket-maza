@@ -1,11 +1,13 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, ScrollView } from "native-base";
+import { View, ScrollView, Text } from "native-base";
 import React from "react";
 import MatchCard from "../../Components/MatchCard";
 import TrendingSeries from "../../Components/TrendingSeries";
 import LatestVideos from "../../Components/LatestVideos";
 import Headlines from "../../Components/Headlines";
 import Header from "../../Components/Header";
+import { AntDesign } from "@expo/vector-icons";
+
 const matchData = {
   team1: {
     name: "SL",
@@ -21,12 +23,22 @@ const matchData = {
   score2: 49,
   matchTime: "2024-06-03T19:30:00",
 };
+
 const Dashboard = () => {
   const nav = useNavigation();
   return (
     <View flex={1}>
       <ScrollView>
-        <Header />
+        <Header
+          left={
+            <Text fontSize="xl" color="white" fontWeight="bold">
+              Logo
+            </Text>
+          }
+          center={"Cricket Maza 12"}
+          right={<AntDesign name="sharealt" size={24} color="white" />}
+          filter
+        />
         <MatchCard
           team1={matchData.team1}
           team2={matchData.team2}

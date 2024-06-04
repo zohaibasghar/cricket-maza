@@ -7,6 +7,7 @@ import ScheduleHome from "./Screens/Matches/ScheduleHome";
 import MoreHome from "./Screens/More/MoreHome";
 import MoreStack from "./Stacks/MoreStack";
 import { Entypo, Feather, MaterialIcons, AntDesign } from "@expo/vector-icons";
+import HomeStack from "./Stacks/Home";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -40,7 +41,7 @@ const HomeTabs = () => {
         component={Dashboard}
         options={{ tabBarLabel: "Home", headerShown: false }}
       />
-      <Tab.Screen name="Updates" component={UpdatesHome} />
+      <Tab.Screen name="Updates" component={UpdatesHome} options={{ headerShown: false }} />
       <Tab.Screen name="Live" component={LiveHome} />
       <Tab.Screen name="Matches" component={ScheduleHome} />
       <Tab.Screen
@@ -60,6 +61,7 @@ export default function Main() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="HomeTabs" component={HomeTabs} />
+      <Stack.Screen name="HomeStack" component={HomeStack} />
       <Stack.Screen name="MoreStack" component={MoreStack} />
     </Stack.Navigator>
   );

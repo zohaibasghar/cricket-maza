@@ -1,20 +1,15 @@
-import { useNavigation } from "@react-navigation/native";
-import { View, Text, ScrollView, HStack, VStack, FlatList } from "native-base";
+import { HStack, ScrollView, Text, VStack, View } from "native-base";
 import React, { useState } from "react";
 import Header from "../../Components/Header";
+import { FontAwesome5, AntDesign } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
-import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
-import HeadlineCard from "../../Components/HeadlineCard";
+import { useNavigation } from "@react-navigation/native";
+import SeriesCard from "../../Components/SeriesCard";
 
-const list = [
-  "All",
-  "Mens T20 World Cup 2024",
-  "Mens T20 World Cup warm-up Matches 2024",
-  "Pakistan Super League 8",
-  "Indian Premier League",
-];
+const list = ["All", "June", "July", "August", "September", "October", "November", "December"];
+const ScrollData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-const UpdatesHome = () => {
+const TrendingSeries = () => {
   const nav = useNavigation();
   const [SelectedLabel, setSelectedLabel] = useState(list[0]);
   return (
@@ -25,7 +20,7 @@ const UpdatesHome = () => {
             <FontAwesome5 name="chevron-left" size={24} color="white" />
           </TouchableOpacity>
         }
-        center={"UPDATES"}
+        center={"SERIES"}
         right={<AntDesign name="sharealt" size={24} color="white" />}
       />
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
@@ -50,14 +45,15 @@ const UpdatesHome = () => {
           ))}
         </HStack>
       </ScrollView>
-      <FlatList
-        data={[1, 2, 3, 4, 5, 6]}
-        renderItem={() => <HeadlineCard />}
-        numColumns={2}
-        keyExtractor={(item) => item.toString()}
-      />
+      <ScrollView>
+        <VStack space={3} my={4} px={4}>
+          {ScrollData.map((_, index) => (
+            <SeriesCard key={index} />
+          ))}
+        </VStack>
+      </ScrollView>
     </View>
   );
 };
 
-export default UpdatesHome;
+export default TrendingSeries;
