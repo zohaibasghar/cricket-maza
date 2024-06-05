@@ -43,12 +43,12 @@ const VideoComp = ({ width, height }: { width?: string; height?: string }) => {
             color="white"
           />
         </TouchableOpacity>
-        <VStack position={"absolute"} bottom={0} bg={"rgba(0,0,0,0.5)"} w={"100%"} p={2}>
-          <Text fontSize={"xs"} bold color={"white"}>
+        <VStack position={"absolute"} bottom={0} bg={"rgba(0,0,0,0.6)"} w={"100%"} p={2}>
+          <Text fontSize={"xs"} fontFamily={"es_semiBold"} color={"white"}>
             Predict & Win. England vs Pakistan 4th T20i Match Prediction. Know key Players,
             breakdown & more
           </Text>
-          <Text fontSize={"2xs"} color={"#5E41E6"}>
+          <Text fontSize={"2xs"} color={"#ADD8E6"}>
             30 May 2024 • 12:29 PM, Thu
           </Text>
         </VStack>

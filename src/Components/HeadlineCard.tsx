@@ -26,7 +26,7 @@ const HeadlineCard = () => {
           <Text px={2} pt={2}>
             Brits set to make comeback on india
           </Text>
-          <Text px={2} pb={2} fontSize={"2xs"} color={"#5E41E6"}>
+          <Text px={2} pb={2} fontSize={"2xs"} color={"#ADD8E6"}>
             01 Jun 2024 • 10:30 AM, Sat
           </Text>
         </VStack>

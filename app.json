@@ -6,14 +6,13 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "privacy": "public",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
       "backgroundColor": "#5E41E6"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -31,6 +30,18 @@
       "eas": {
         "projectId": "71e86241-72f8-45a2-82c1-96a0cd1d1bb2"
       }
-    }
+    },
+    "plugins": [
+      "expo-font",
+      {
+        "fonts": [
+          "./assets/fonts/inter_variable.ttf",
+          "./assets/fonts/ESSC-Bold.ttf",
+          "./assets/fonts/ESSC-Medium.ttf",
+          "./assets/fonts/ESSC-Regular.ttf",
+          "./assets/fonts/ESSC-SemiBold.ttf"
+        ]
+      }
+    ]
   }
 }

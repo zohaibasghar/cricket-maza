@@ -10,7 +10,7 @@ const Headlines = () => {
   return (
     <View my={4}>
       <HStack alignItems={"center"} justifyContent={"space-between"} w={"93%"} mx={4} mb={2}>
-        <Text bold>HEADLINES</Text>
+        <Text fontFamily={"es_bold"}>HEADLINES</Text>
         <TouchableOpacity onPress={() => nav.navigate("Updates" as never)}>
           <HStack alignItems={"center"}>
             <Text fontSize={"xs"} fontStyle={"italic"}>

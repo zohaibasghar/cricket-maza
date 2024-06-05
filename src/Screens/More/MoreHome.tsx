@@ -10,14 +10,16 @@ import {
 } from "@expo/vector-icons";
 import { useState } from "react";
 import { TouchableOpacity } from "react-native";
+import Header from "../../Components/Header";
 
 const MoreHome = () => {
   const nav = useNavigation();
   const [toggleAudio, setToggleAudio] = useState(false);
   // nav.navigate("MoreStack", { screen: "Login" });
   return (
-    <Box flex={1} px={4} py={2}>
-      <ScrollView>
+    <Box flex={1}>
+      <Header left={<Box></Box>} center={"SETTINGS"} right={<Box></Box>} />
+      <ScrollView px={4} py={2}>
         <VStack space={3}>
           {/* login card */}
           <TouchableOpacity onPress={() => nav.navigate("MoreStack", { screen: "Login" })}>
@@ -33,7 +35,7 @@ const MoreHome = () => {
               }}
             >
               <Box>
-                <Text fontWeight={500} color={"white"} fontSize={"md"}>
+                <Text fontFamily={'es_semiBold'} color={"white"} fontSize={"md"}>
                   Login
                 </Text>
                 <Text fontSize={"xs"} color={"white"}>
@@ -57,7 +59,7 @@ const MoreHome = () => {
               }}
             >
               <Box>
-                <Text fontWeight={500} color={"white"} fontSize={"md"}>
+                <Text fontFamily={'es_semiBold'} color={"white"} fontSize={"md"}>
                   Buy Plan
                 </Text>
                 <Text fontSize={"xs"} color={"white"}>
@@ -80,7 +82,7 @@ const MoreHome = () => {
             }}
           >
             <Box>
-              <Text fontWeight={500} color={"white"} fontSize={"md"}>
+              <Text fontFamily={'es_semiBold'} color={"white"} fontSize={"md"}>
                 Odds Section
               </Text>
               <Text fontSize={"xs"} color={"white"}>
@@ -102,7 +104,7 @@ const MoreHome = () => {
             }}
           >
             <Box>
-              <Text fontWeight={500} color={"white"} fontSize={"md"}>
+              <Text fontFamily={'es_semiBold'} color={"white"} fontSize={"md"}>
                 Session
               </Text>
               <Text fontSize={"xs"} color={"white"}>
@@ -124,7 +126,7 @@ const MoreHome = () => {
             }}
           >
             <Box>
-              <Text fontWeight={500} color={"white"} fontSize={"md"}>
+              <Text fontFamily={'es_semiBold'} color={"white"} fontSize={"md"}>
                 Theme
               </Text>
               <Text fontSize={"xs"} color={"white"}>
@@ -148,7 +150,7 @@ const MoreHome = () => {
           >
             <Flex direction="row" justifyContent={"space-between"} alignItems={"center"} w={"100%"}>
               <VStack>
-                <Text fontWeight={500} color={"white"} fontSize={"md"}>
+                <Text fontFamily={'es_semiBold'} color={"white"} fontSize={"md"}>
                   Audio Commentary
                 </Text>
                 <Text fontSize={"xs"} color={"white"}>
@@ -170,7 +172,7 @@ const MoreHome = () => {
                 English
               </Text>
               <Switch />
-              <Text fontWeight={500}>Hindi</Text>
+              <Text fontFamily={'es_semiBold'}>Hindi</Text>
             </HStack>
           </Flex>
           {/* Share this app */}

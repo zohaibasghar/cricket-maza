@@ -16,46 +16,50 @@ const MatchCard = ({ team1, team2, percentage1, percentage2, score1, score2, mat
       mx={4}
     >
       <VStack space={1}>
-        <Text fontSize="lg" bold textAlign={"center"} letterSpacing={-1} color={"white"}>
+        <Text fontSize="lg" fontFamily={"es_bold"} textAlign={"center"} color={"white"}>
           MENS T20 WORLD CUP 2024
         </Text>
         <Text fontSize="2xs" textAlign={"center"} color={"white"}>
           4th Match T20, United States • {formattedDateTime}
         </Text>
-        <HStack space={2} justifyContent="space-between" alignItems="center">
-          <VStack space={1} alignItems="center">
+        <HStack justifyContent="space-between" alignItems="center" my={2}>
+          <HStack space={4} alignItems="center" justifyContent={"space-between"}>
             <Image
               source={{ uri: team1.logo }}
               alt={`${team1.name} logo`}
               size="sm"
               rounded={"full"}
             />
-            <Text>{team1.name}</Text>
-            <Text color={"white"}>{percentage1}%</Text>
-          </VStack>
+            <VStack>
+              <Text>{team1.name}</Text>
+              <Text color={"white"}>{percentage1}%</Text>
+            </VStack>
+          </HStack>
           <Text fontSize="lg">vs</Text>
-          <VStack space={1} alignItems="center">
+          <HStack space={4} alignItems="center" justifyContent={"space-between"}>
+            <VStack>
+              <Text>{team2.name}</Text>
+              <Text color="white">{percentage2}%</Text>
+            </VStack>
             <Image
               source={{ uri: team2.logo }}
               alt={`${team2.name} logo`}
               size="sm"
               rounded={"full"}
             />
-            <Text>{team2.name}</Text>
-            <Text color="white">{percentage2}%</Text>
-          </VStack>
+          </HStack>
         </HStack>
         <HStack space={2} justifyContent="space-between" alignItems="center">
           <Box w="47%">
-            <Progress colorScheme="green" value={percentage1} />
+            <Progress colorScheme="green" value={percentage1} my={2} />
             <Text textAlign="center">{score1}</Text>
           </Box>
           <Box w="47%">
-            <Progress colorScheme="red" value={percentage2} />
+            <Progress colorScheme="red" value={percentage2} my={2} />
             <Text textAlign="center">{score2}</Text>
           </Box>
         </HStack>
-        <Text textAlign="center" color={"#5E41E6"}>
+        <Text textAlign="center" color={"#ADD8E6"} fontSize={"xs"}>
           STARTING IN: in about 7 hours
         </Text>
       </VStack>

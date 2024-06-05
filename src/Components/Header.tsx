@@ -22,7 +22,7 @@ const Header = ({ left, center, right, filter }: any) => {
       <SafeAreaView>
         <HStack justifyContent={"space-between"} mx={4} my={4} alignItems={"center"}>
           {left}
-          <Text fontSize="lg" color="white" bold>
+          <Text fontSize="lg" color="white" fontFamily={"es_bold"}>
             {center}
           </Text>
           {right}
@@ -31,13 +31,13 @@ const Header = ({ left, center, right, filter }: any) => {
           <HStack justifyContent={"center"} space={8} mb={4}>
             <TouchableOpacity onPress={() => setSelected("UPCOMING")}>
               <View alignItems="center">
-                <Text fontWeight={selected === "UPCOMING" ? "bold" : "normal"}>UPCOMING</Text>
+                <Text fontFamily={selected === "UPCOMING" ? "es_bold" : "es_regular"}>UPCOMING</Text>
                 {selected === "UPCOMING" && <View width="100%" height={1} bg="white" mt={1} />}
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => setSelected("COMPLETED")}>
               <View alignItems="center">
-                <Text fontWeight={selected === "COMPLETED" ? "bold" : "normal"}>COMPLETED</Text>
+                <Text fontFamily={selected === "COMPLETED" ? "es_bold" : "es_regular"}>COMPLETED</Text>
                 {selected === "COMPLETED" && <View width="100%" height={1} bg="white" mt={1} />}
               </View>
             </TouchableOpacity>

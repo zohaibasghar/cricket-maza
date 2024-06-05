@@ -31,7 +31,7 @@ const Dashboard = () => {
       <ScrollView>
         <Header
           left={
-            <Text fontSize="xl" color="white" fontWeight="bold">
+            <Text fontSize="xl" color="white" fontFamily={'es_bold'}>
               Logo
             </Text>
           }

@@ -19,6 +19,8 @@ const HomeTabs = () => {
         tabBarActiveTintColor: "#5E41E6",
         tabBarInactiveTintColor: "white",
         tabBarLabelPosition: "below-icon",
+        tabBarStyle: { marginTop: 8 },
+        headerShown: false,
         tabBarIcon: ({ color, size }) => {
           switch (route.name) {
             case "Dashboard":
@@ -36,12 +38,8 @@ const HomeTabs = () => {
         tabBarLabelStyle: { marginBottom: 4, fontSize: 11 },
       })}
     >
-      <Tab.Screen
-        name="Dashboard"
-        component={Dashboard}
-        options={{ tabBarLabel: "Home", headerShown: false }}
-      />
-      <Tab.Screen name="Updates" component={UpdatesHome} options={{ headerShown: false }} />
+      <Tab.Screen name="Dashboard" component={Dashboard} options={{ tabBarLabel: "Home" }} />
+      <Tab.Screen name="Updates" component={UpdatesHome} />
       <Tab.Screen name="Live" component={LiveHome} />
       <Tab.Screen name="Matches" component={ScheduleHome} />
       <Tab.Screen

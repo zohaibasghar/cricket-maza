@@ -8,6 +8,7 @@ const BuyPlan = () => {
     {
       name: "One Day Plan",
       subtitle: "Cricket MAZZA 11 LIVE LINE 1 DAY",
+      range: "1 Day",
       price: 100,
       benifits: [
         "Free Score Updates",
@@ -20,6 +21,7 @@ const BuyPlan = () => {
     {
       name: "Fifteen Day Plan",
       subtitle: "Cricket MAZZA 11 LIVE LINE 15 DAY",
+      range: "15 Days",
       price: 300,
       benifits: [
         "Free Score Updates",
@@ -32,6 +34,7 @@ const BuyPlan = () => {
     {
       name: "Thirty Day Plan",
       subtitle: "Cricket MAZZA 11 LIVE LINE 30 DAY",
+      range: "30 Days",
       price: 500,
       benifits: [
         "Free Score Updates",
@@ -46,7 +49,7 @@ const BuyPlan = () => {
     <ScrollView>
       <View flex={1}>
         <VStack mt={10} justifyContent={"space-around"} alignItems={"center"} space={10}>
-          <Text fontWeight={700} fontSize={"3xl"} color={"white"} mt={1}>
+          <Text fontFamily={"es_bold"} fontSize={"3xl"} color={"white"} mt={1}>
             Choose Plan
           </Text>
           <ScrollView
@@ -58,13 +61,16 @@ const BuyPlan = () => {
               <View borderWidth={1} mx={2} rounded={"lg"} bg={"#222"} p={6} key={i}>
                 <VStack space={10}>
                   <VStack justifyContent={"center"} alignItems={"center"}>
-                    <Text fontSize={"lg"} fontWeight={500}>
+                    <Text fontSize={"lg"} fontFamily={"es_semiBold"}>
                       {plan?.name}
                     </Text>
-                    <Text fontSize={"sm"}>( {plan?.subtitle} )</Text>
+                    <Text fontSize={"sm"} fontFamily={"es_medium"}>
+                      ( {plan?.subtitle} )
+                    </Text>
+                    <Text fontFamily={'es_bold'} fontSize={'xl'}>{plan.range}</Text>
                   </VStack>
                   {/* Buy Plan Benifits */}
-                  <VStack space={5}>
+                  <VStack space={2}>
                     {plan?.benifits.map((benifit, i) => (
                       <HStack alignItems={"center"} space={3} key={i}>
                         <Entypo name="check" size={20} color="#fff" />

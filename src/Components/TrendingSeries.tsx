@@ -10,7 +10,7 @@ const TrendingSeries = () => {
   return (
     <View m={4}>
       <HStack alignItems={"center"} justifyContent={"space-between"} w={"100%"}>
-        <Text bold>TRENDING SERIES</Text>
+        <Text fontFamily={'es_bold'}>TRENDING SERIES</Text>
         <TouchableOpacity onPress={() => nav.navigate("HomeStack", { screen: "TrendingSeries" })}>
           <HStack alignItems={"center"}>
             <Text fontSize={"xs"} fontStyle={"italic"}>

@@ -10,7 +10,7 @@ const LatestVideos = () => {
   return (
     <View>
       <HStack alignItems={"center"} justifyContent={"space-between"} w={"93%"} mx={4} mb={2}>
-        <Text bold>LATEST VIDEOS</Text>
+        <Text fontFamily={'es_bold'}>LATEST VIDEOS</Text>
         <TouchableOpacity onPress={() => nav.navigate("HomeStack", { screen: "AllVideos" })}>
           <HStack alignItems={"center"}>
             <Text fontSize={"xs"} fontStyle={"italic"}>
