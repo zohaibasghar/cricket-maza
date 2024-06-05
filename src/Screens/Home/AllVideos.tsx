@@ -52,7 +52,7 @@ const AllVideos = () => {
         </HStack>
       </ScrollView>
       <ScrollView>
-        <VStack space={3} my={4}>
+        <VStack space={4} my={4}>
           {ScrollData.map((_, index) => (
             <VideoComp key={index}/>
           ))}
