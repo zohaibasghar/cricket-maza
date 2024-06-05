@@ -64,7 +64,7 @@ const ScheduleHome = () => {
           py={1}
         >
           <TouchableOpacity onPress={() => setMatchType("upcoming")}>
-            <Text>UPCOMING MATCHES</Text>
+            <Text color={matchType === "recent" ? "gray.400" : "white"}>UPCOMING MATCHES</Text>
           </TouchableOpacity>
         </HStack>
         <HStack
@@ -76,7 +76,7 @@ const ScheduleHome = () => {
           py={1}
         >
           <TouchableOpacity onPress={() => setMatchType("recent")}>
-            <Text>RECENT MATCHES</Text>
+            <Text color={matchType === "upcoming" ? "gray.400" : "white"}>RECENT MATCHES</Text>
           </TouchableOpacity>
         </HStack>
       </HStack>
