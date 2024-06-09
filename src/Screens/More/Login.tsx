@@ -14,10 +14,19 @@ import {
 import { Entypo, Ionicons, SimpleLineIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { TouchableOpacity } from "react-native";
+import { useAppDispatch, useAppSelector } from "../../redux/Store";
+import { login } from "../../redux/actions/authActions";
 
 const Login = () => {
   const nav = useNavigation();
   const [show, setShow] = useState(false);
+  const [form, setForm] = useState({ email: "mail@gmail.com", password: "password" });
+  const dispatch = useAppDispatch();
+  const { loading, token } = useAppSelector((state) => state.auth);
+
+  const handleLogin = () => {
+    dispatch(login(form)).then(() => nav.navigate("HomeTabs", { screen: "More" }));
+  };
   return (
     <ScrollView>
       <Box flex={1} px={4} py={2}>
@@ -51,6 +60,8 @@ const Login = () => {
                     <Entypo name="email" size={24} color="white" style={{ marginLeft: 12 }} />
                   }
                   placeholder="johndoe@example.com"
+                  value={form.email}
+                  onChangeText={(e) => setForm({ ...form, email: e })}
                 />
               </VStack>
               <VStack>
@@ -76,6 +87,8 @@ const Login = () => {
                       />
                     </TouchableOpacity>
                   }
+                  value={form.password}
+                  onChangeText={(e) => setForm({ ...form, password: e })}
                 />
               </VStack>
             </VStack>
@@ -85,7 +98,9 @@ const Login = () => {
               <Text fontSize={"xs"}>FORGOT PASSWORD?</Text>
             </TouchableOpacity>
           </Center>
-          <Button>LOGIN</Button>
+          <Button isLoading={!!loading} onPress={handleLogin}>
+            LOGIN
+          </Button>
           <HStack space={1} justifyContent={"center"}>
             <Text fontSize={"xs"}>Don't have an Account?</Text>
             <TouchableOpacity onPress={() => nav.navigate("Signup" as never)}>

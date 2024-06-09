@@ -8,6 +8,11 @@ import MoreHome from "./Screens/More/MoreHome";
 import MoreStack from "./Stacks/MoreStack";
 import { Entypo, Feather, MaterialIcons, AntDesign } from "@expo/vector-icons";
 import HomeStack from "./Stacks/Home";
+import { useEffect } from "react";
+import { getToken } from "./storage/storage";
+import { useAppDispatch, useAppSelector } from "./redux/Store";
+import { fetchUser } from "./redux/actions/authActions";
+import axiosInstance from "./config/axios";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -56,6 +61,20 @@ const HomeTabs = () => {
   );
 };
 export default function Main() {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    getToken().then((token) => {
+      if (token) {
+        axiosInstance.interceptors.request.use((config) => {
+          config.headers["auth-token"] = token;
+          return config;
+        });
+
+        dispatch(fetchUser());
+      }
+    });
+  }, []);
+
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="HomeTabs" component={HomeTabs} />

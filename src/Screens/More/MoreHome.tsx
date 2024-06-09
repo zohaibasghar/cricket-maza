@@ -11,40 +11,67 @@ import {
 import { useState } from "react";
 import { TouchableOpacity } from "react-native";
 import Header from "../../Components/Header";
+import { useAppSelector } from "../../redux/Store";
 
 const MoreHome = () => {
   const nav = useNavigation();
   const [toggleAudio, setToggleAudio] = useState(false);
-  // nav.navigate("MoreStack", { screen: "Login" });
+  const { token } = useAppSelector((state) => state.auth);
   return (
     <Box flex={1}>
       <Header left={<Box></Box>} center={"SETTINGS"} right={<Box></Box>} />
       <ScrollView px={4} py={2}>
         <VStack space={3}>
           {/* login card */}
-          <TouchableOpacity onPress={() => nav.navigate("MoreStack", { screen: "Login" })}>
-            <Flex
-              direction="row"
-              justifyContent={"space-between"}
-              alignItems="center"
-              px={5}
-              py={2}
-              bg="#222"
-              style={{
-                borderRadius: 12,
-              }}
-            >
-              <Box>
-                <Text fontFamily={'es_semiBold'} color={"white"} fontSize={"md"}>
-                  Login
-                </Text>
-                <Text fontSize={"xs"} color={"white"}>
-                  Press login to continue
-                </Text>
-              </Box>
-              <MaterialIcons name="keyboard-arrow-right" size={28} color="white" />
-            </Flex>
-          </TouchableOpacity>
+          {token ? (
+            <TouchableOpacity onPress={() => nav.navigate("MoreStack", { screen: "MyAccount" })}>
+              <Flex
+                direction="row"
+                justifyContent={"space-between"}
+                alignItems="center"
+                px={5}
+                py={2}
+                bg="#222"
+                style={{
+                  borderRadius: 12,
+                }}
+              >
+                <Box>
+                  <Text fontFamily={"es_semiBold"} color={"white"} fontSize={"md"}>
+                    My Account
+                  </Text>
+                  <Text fontSize={"xs"} color={"white"}>
+                    Check information about your account
+                  </Text>
+                </Box>
+                <MaterialIcons name="keyboard-arrow-right" size={28} color="white" />
+              </Flex>
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity onPress={() => nav.navigate("MoreStack", { screen: "Login" })}>
+              <Flex
+                direction="row"
+                justifyContent={"space-between"}
+                alignItems="center"
+                px={5}
+                py={2}
+                bg="#222"
+                style={{
+                  borderRadius: 12,
+                }}
+              >
+                <Box>
+                  <Text fontFamily={"es_semiBold"} color={"white"} fontSize={"md"}>
+                    Login
+                  </Text>
+                  <Text fontSize={"xs"} color={"white"}>
+                    Press login to continue
+                  </Text>
+                </Box>
+                <MaterialIcons name="keyboard-arrow-right" size={28} color="white" />
+              </Flex>
+            </TouchableOpacity>
+          )}
           {/* Buy Plan card */}
           <TouchableOpacity onPress={() => nav.navigate("MoreStack", { screen: "BuyPlan" })}>
             <Flex
@@ -59,7 +86,7 @@ const MoreHome = () => {
               }}
             >
               <Box>
-                <Text fontFamily={'es_semiBold'} color={"white"} fontSize={"md"}>
+                <Text fontFamily={"es_semiBold"} color={"white"} fontSize={"md"}>
                   Buy Plan
                 </Text>
                 <Text fontSize={"xs"} color={"white"}>
@@ -82,7 +109,7 @@ const MoreHome = () => {
             }}
           >
             <Box>
-              <Text fontFamily={'es_semiBold'} color={"white"} fontSize={"md"}>
+              <Text fontFamily={"es_semiBold"} color={"white"} fontSize={"md"}>
                 Odds Section
               </Text>
               <Text fontSize={"xs"} color={"white"}>
@@ -104,7 +131,7 @@ const MoreHome = () => {
             }}
           >
             <Box>
-              <Text fontFamily={'es_semiBold'} color={"white"} fontSize={"md"}>
+              <Text fontFamily={"es_semiBold"} color={"white"} fontSize={"md"}>
                 Session
               </Text>
               <Text fontSize={"xs"} color={"white"}>
@@ -126,7 +153,7 @@ const MoreHome = () => {
             }}
           >
             <Box>
-              <Text fontFamily={'es_semiBold'} color={"white"} fontSize={"md"}>
+              <Text fontFamily={"es_semiBold"} color={"white"} fontSize={"md"}>
                 Theme
               </Text>
               <Text fontSize={"xs"} color={"white"}>
@@ -150,7 +177,7 @@ const MoreHome = () => {
           >
             <Flex direction="row" justifyContent={"space-between"} alignItems={"center"} w={"100%"}>
               <VStack>
-                <Text fontFamily={'es_semiBold'} color={"white"} fontSize={"md"}>
+                <Text fontFamily={"es_semiBold"} color={"white"} fontSize={"md"}>
                   Audio Commentary
                 </Text>
                 <Text fontSize={"xs"} color={"white"}>
@@ -172,7 +199,7 @@ const MoreHome = () => {
                 English
               </Text>
               <Switch />
-              <Text fontFamily={'es_semiBold'}>Hindi</Text>
+              <Text fontFamily={"es_semiBold"}>Hindi</Text>
             </HStack>
           </Flex>
           {/* Share this app */}
