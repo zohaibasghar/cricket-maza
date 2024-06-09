@@ -198,7 +198,7 @@ const MoreHome = () => {
               <Text fontWeight={700} color={"green.500"}>
                 English
               </Text>
-              <Switch />
+              <Switch trackColor={{ false: "#fff", true: "#fff" }} thumbColor={"#5E41E6"} />
               <Text fontFamily={"es_semiBold"}>Hindi</Text>
             </HStack>
           </Flex>
