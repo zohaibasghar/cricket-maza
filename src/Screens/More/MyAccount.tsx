@@ -1,4 +1,4 @@
-import { View, Text, VStack, HStack, Divider, ScrollView, Modal, Button } from "native-base";
+import { View, Text, VStack, HStack, Divider, ScrollView, Modal, Button, Toast } from "native-base";
 import React, { useState } from "react";
 import { Center } from "native-base";
 import { useAppDispatch, useAppSelector } from "../../redux/Store";
@@ -15,6 +15,11 @@ const MyAccount = () => {
   const dispatch = useAppDispatch();
   function handleLogout() {
     dispatch(logout());
+    Toast.show({
+      description: "You are logged out!",
+      title: "Logged out!",
+      alignItems: "center",
+    });
     setShowModal(false);
     nav.navigate("HomeTabs", { screen: "More" });
   }

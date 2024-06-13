@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { fetchUser, login, registerUser } from "./actions/authActions";
+import { changePassword, fetchUser, login, registerUser } from "./actions/authActions";
 import axiosInstance from "../config/axios";
 import { removeToken, storeToken } from "../storage/storage";
 interface AppState {
@@ -67,6 +67,7 @@ export const authSlice = createSlice({
     builder
       .addCase(login.pending, (state) => {
         state.loading = 1;
+        state.error = "";
       })
       .addCase(login.rejected, (state, action) => {
         state.loading = 0;
@@ -84,6 +85,7 @@ export const authSlice = createSlice({
       })
       .addCase(registerUser.pending, (state) => {
         state.loading = 1;
+        state.error = "";
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.loading = 0;
@@ -101,6 +103,7 @@ export const authSlice = createSlice({
       })
       .addCase(fetchUser.pending, (state) => {
         state.loading = 1;
+        state.error = "";
       })
       .addCase(fetchUser.rejected, (state, action) => {
         state.loading = 0;
@@ -110,6 +113,17 @@ export const authSlice = createSlice({
         state.loading = 0;
         state.token = action.payload.data.authToken;
         state.user = action.payload.data.user;
+      })
+      .addCase(changePassword.pending, (state) => {
+        state.loading = 1;
+        state.error = "";
+      })
+      .addCase(changePassword.rejected, (state, action) => {
+        state.loading = 0;
+        state.error = action.error.message;
+      })
+      .addCase(changePassword.fulfilled, (state) => {
+        state.loading = 0;
       });
   },
 });

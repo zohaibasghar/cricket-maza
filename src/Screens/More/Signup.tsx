@@ -1,4 +1,15 @@
-import { View, Text, Card, Input, VStack, Icon, Button, HStack, ScrollView } from "native-base";
+import {
+  Text,
+  Card,
+  Input,
+  VStack,
+  Icon,
+  Button,
+  HStack,
+  ScrollView,
+  useToast,
+  Box,
+} from "native-base";
 import React, { useState } from "react";
 import { AntDesign, Ionicons, SimpleLineIcons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
@@ -13,11 +24,25 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
-  const { loading, user } = useAppSelector((state) => state.auth);
+  const { loading, error } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
-  console.log({ user });
+  const toast = useToast();
   function handleSignUp() {
-    dispatch(registerUser({ name, email, password, mobile }));
+    dispatch(registerUser({ name, email, password, mobile })).then(() => {
+      if (error) {
+        return toast.show({ description: error });
+      }
+      toast.show({
+        render: () => {
+          return (
+            <Box bg="#5E41E6" px="2" py="1" rounded="sm" mb={5}>
+              Welcome to Cricket Maza!
+            </Box>
+          );
+        },
+      });
+      nav.navigate("HomeTabs", { screen: "More" });
+    });
   }
   return (
     <ScrollView>

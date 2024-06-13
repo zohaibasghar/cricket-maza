@@ -10,6 +10,7 @@ import {
   Button,
   HStack,
   ScrollView,
+  useToast,
 } from "native-base";
 import { Entypo, Ionicons, SimpleLineIcons } from "@expo/vector-icons";
 import { useState } from "react";
@@ -20,12 +21,27 @@ import { login } from "../../redux/actions/authActions";
 const Login = () => {
   const nav = useNavigation();
   const [show, setShow] = useState(false);
-  const [form, setForm] = useState({ email: "mail@gmail.com", password: "password" });
+  const [form, setForm] = useState({ email: "test@example.com", password: "password" });
   const dispatch = useAppDispatch();
-  const { loading, token } = useAppSelector((state) => state.auth);
-
+  const { loading, error } = useAppSelector((state) => state.auth);
+  const toast = useToast();
   const handleLogin = () => {
-    dispatch(login(form)).then(() => nav.navigate("HomeTabs", { screen: "More" }));
+    dispatch(login(form)).then(() => {
+      if (error) {
+        return toast.show({ description: error });
+      }
+      toast.show({
+        title: "Logged in!",
+        render: () => {
+          return (
+            <Box bg="#5E41E6" px="4" py="2" rounded="sm" mb={5}>
+              <Text fontSize={"lg"}>You are logged in!</Text>
+            </Box>
+          );
+        },
+      });
+      nav.navigate("HomeTabs", { screen: "More" });
+    });
   };
   return (
     <ScrollView>

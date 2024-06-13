@@ -16,3 +16,11 @@ export const fetchUser = createAsyncThunk("user/fetchuser", async () => {
   const res = await axiosInstance.get("/auth/fetchuser");
   return res;
 });
+
+export const changePassword = createAsyncThunk(
+  "user/change-password",
+  async (body: { currentPassword: string; newPassword: string }) => {
+    const res = await axiosInstance.patch("/auth/change-password", body);
+    return res;
+  },
+);
