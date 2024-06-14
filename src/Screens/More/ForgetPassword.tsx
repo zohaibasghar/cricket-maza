@@ -1,8 +1,14 @@
 import { Entypo } from "@expo/vector-icons";
-import { View, Text, Box, FormControl, VStack, Button, Input } from "native-base";
-import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import { Text, Box, FormControl, VStack, Button, Input } from "native-base";
+import React, { useState } from "react";
 
 const ForgetPassword = () => {
+  const [email, setEmail] = useState("");
+  const nav = useNavigation();
+  function handleForgetPassword() {
+    nav.navigate("OtpVerification", { email });
+  }
   return (
     <Box flex={1} px={4} py={2}>
       <VStack
@@ -31,6 +37,9 @@ const ForgetPassword = () => {
             <VStack>
               <FormControl.Label>Email</FormControl.Label>
               <Input
+                autoCapitalize="none"
+                value={email}
+                onChangeText={(e) => setEmail(e)}
                 leftElement={
                   <Entypo name="email" size={24} color="white" style={{ marginLeft: 12 }} />
                 }
@@ -39,7 +48,9 @@ const ForgetPassword = () => {
             </VStack>
           </VStack>
         </FormControl>
-        <Button>SEND</Button>
+        <Button disabled={!email} onPress={handleForgetPassword}>
+          SEND
+        </Button>
       </VStack>
     </Box>
   );

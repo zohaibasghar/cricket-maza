@@ -7,6 +7,8 @@ import ForgetPassword from "../Screens/More/ForgetPassword";
 import MyAccount from "../Screens/More/MyAccount";
 import Transactions from "../Screens/More/Transactions";
 import ChangePassword from "../Screens/More/ChangePassword";
+import OtpVerify from "../Screens/More/OtpVerify";
+import ResetPassword from "../Screens/More/ResetPassword";
 
 const Stack = createStackNavigator();
 const MoreStack = () => {
@@ -36,6 +38,16 @@ const MoreStack = () => {
         name="ChangePassword"
         component={ChangePassword}
         options={{ headerTitle: "CHANGE PASSWORD" }}
+      />
+      <Stack.Screen
+        name="OtpVerification"
+        component={OtpVerify}
+        options={{ headerTitle: "OTP VERIFICATION" }}
+      />
+      <Stack.Screen
+        name="ResetPassword"
+        component={ResetPassword}
+        options={{ headerTitle: "RESET PASSWORD" }}
       />
     </Stack.Navigator>
   );

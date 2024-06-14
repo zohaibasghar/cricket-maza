@@ -3,33 +3,40 @@ import { View, Text, Input, Card, VStack, Button, useToast, Box } from "native-b
 import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/Store";
 import { changePassword } from "../../redux/actions/authActions";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { addError } from "../../redux/errorSlice";
+import uuid from "../../utils/uuid";
 
-const ChangePassword = () => {
+const ResetPassword = () => {
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const dispatch = useAppDispatch();
+  const route = useRoute();
+  const { email } = route.params as any;
   const [curErr, setCurErr] = useState<string>("");
   const { loading, error } = useAppSelector((state) => state.auth);
   const toast = useToast();
   const nav = useNavigation();
   function handleChangePassword() {
+    if (!email) {
+      dispatch(addError({ id: uuid(), title: "Email not found!", status: "error" }));
+    }
     if (currentPassword !== newPassword) {
       return setCurErr("Passwords does not match!");
     } else {
       setCurErr("");
-      dispatch(changePassword({ currentPassword, newPassword })).then(() => {
+      dispatch(changePassword({ currentPassword, newPassword, email })).then(() => {
         if (!error) {
           toast.show({
             render: () => {
               return (
                 <Box bg="#5E41E6" px="4" py="2" rounded="sm" mb={5}>
-                  <Text fontSize={"lg"}>Password changed successfully!</Text>
+                  <Text fontSize={"lg"}>Password reset successfully!</Text>
                 </Box>
               );
             },
           });
-          nav.goBack();
+          nav.navigate("MoreStack", { screen: "Login" });
         }
       });
     }
@@ -39,10 +46,10 @@ const ChangePassword = () => {
       <Card bg={"#222"} m={4} rounded={"2xl"} w={"94%"}>
         <VStack space={8}>
           <Text fontStyle={"italic"} fontWeight={700} fontSize={"lg"}>
-            Change Password
+            Reset Password
           </Text>
           <Input
-            placeholder="Enter old password"
+            placeholder="Enter new password"
             type="password"
             leftElement={
               <SimpleLineIcons name="lock" size={24} color="white" style={{ marginLeft: 12 }} />
@@ -53,7 +60,7 @@ const ChangePassword = () => {
           />
           <VStack space={2}>
             <Input
-              placeholder="Enter new password"
+              placeholder="Confirm password"
               type="password"
               autoCapitalize="none"
               leftElement={
@@ -65,7 +72,7 @@ const ChangePassword = () => {
             {curErr && <Text color={"red.500"}>{curErr}</Text>}
           </VStack>
           <Button mx={8} isLoading={!!loading} disabled={!!loading} onPress={handleChangePassword}>
-            UPDATE
+            RESET
           </Button>
         </VStack>
       </Card>
@@ -73,4 +80,4 @@ const ChangePassword = () => {
   );
 };
 
-export default ChangePassword;
+export default ResetPassword;

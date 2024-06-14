@@ -8,6 +8,7 @@ import StoreProvider from "./src/redux/Store";
 import { StatusBar } from "expo-status-bar";
 import customTheme from "./src/theme";
 import { useFonts } from "expo-font";
+import ErrorsContainer from "./src/Components/ErrorsContainer";
 
 const navigationTheme = {
   dark: true,
@@ -34,6 +35,7 @@ export default function App() {
         <StoreProvider>
           <NavigationContainer theme={navigationTheme}>
             <StatusBar style="light" animated />
+            <ErrorsContainer />
             <Main />
           </NavigationContainer>
         </StoreProvider>

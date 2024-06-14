@@ -26,23 +26,21 @@ const Login = () => {
   const { loading, error } = useAppSelector((state) => state.auth);
   const toast = useToast();
   const handleLogin = () => {
-    dispatch(login(form)).then(() => {
-      if (error) {
-        return toast.show({ description: error });
-      }
-      toast.show({
-        title: "Logged in!",
-        render: () => {
-          return (
-            <Box bg="#5E41E6" px="4" py="2" rounded="sm" mb={5}>
-              <Text fontSize={"lg"}>You are logged in!</Text>
-            </Box>
-          );
-        },
-      });
-      nav.navigate("HomeTabs", { screen: "More" });
+    dispatch(login(form));
+    if (error) return;
+    toast.show({
+      title: "Logged in!",
+      render: () => {
+        return (
+          <Box bg="#5E41E6" px="4" py="2" rounded="sm" mb={5}>
+            <Text fontSize={"lg"}>You are logged in!</Text>
+          </Box>
+        );
+      },
     });
+    nav.navigate("HomeTabs", { screen: "More" });
   };
+
   return (
     <ScrollView>
       <Box flex={1} px={4} py={2}>
@@ -77,6 +75,7 @@ const Login = () => {
                   }
                   placeholder="johndoe@example.com"
                   value={form.email}
+                  autoCapitalize="none"
                   onChangeText={(e) => setForm({ ...form, email: e })}
                 />
               </VStack>
@@ -85,6 +84,7 @@ const Login = () => {
                 <Input
                   placeholder="Password"
                   type={show ? "text" : "password"}
+                  autoCapitalize="none"
                   leftElement={
                     <SimpleLineIcons
                       name="lock"
