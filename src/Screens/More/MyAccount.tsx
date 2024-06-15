@@ -2,7 +2,7 @@ import { View, Text, VStack, HStack, Divider, ScrollView, Modal, Button, Toast }
 import React, { useState } from "react";
 import { Center } from "native-base";
 import { useAppDispatch, useAppSelector } from "../../redux/Store";
-import { AntDesign, Entypo, FontAwesome6, MaterialIcons } from "@expo/vector-icons";
+import { AntDesign, Entypo, FontAwesome6, MaterialIcons, Octicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { logout } from "../../redux/authSlice";
@@ -34,7 +34,7 @@ const MyAccount = () => {
           <VStack w={"90%"} space={6}>
             <HStack justifyContent={"space-between"} alignItems={"center"}>
               <Text fontFamily={"es_semiBold"}>{user?.name}</Text>
-              <Entypo name="user" size={28} color="gray" />
+              <Entypo name="user" size={24} color="gray" />
             </HStack>
             <Divider />
             <HStack justifyContent={"space-between"} alignItems={"center"}>
@@ -44,7 +44,7 @@ const MyAccount = () => {
             <Divider />
             <HStack justifyContent={"space-between"} alignItems={"center"}>
               <Text fontFamily={"es_semiBold"}>{user?.mobile}</Text>
-              <AntDesign name="mobile1" size={28} color="gray" />
+              <AntDesign name="mobile1" size={24} color="gray" />
             </HStack>
             <Divider />
             <TouchableOpacity onPress={() => nav.navigate("Transactions" as never)}>
@@ -65,6 +65,11 @@ const MyAccount = () => {
             <TouchableOpacity onPress={() => setDeleteModal(true)}>
               <Text fontFamily={"es_semiBold"}>Delete Account</Text>
             </TouchableOpacity>
+            <Divider />
+            <HStack space={2} justifyContent={"center"} alignItems={"center"}>
+              <Octicons name="versions" size={24} color="#fff" />
+              <Text>Version: 1.0</Text>
+            </HStack>
           </VStack>
         </Center>
       </ScrollView>

@@ -113,7 +113,7 @@ const MoreHome = () => {
                 Odds Section
               </Text>
               <Text fontSize={"xs"} color={"white"}>
-                Odds will be visible during live matche
+                Odds will be visible during live matches
               </Text>
             </Box>
             <Switch />
@@ -135,7 +135,7 @@ const MoreHome = () => {
                 Session
               </Text>
               <Text fontSize={"xs"} color={"white"}>
-                Session will be visible during live matche
+                Session will be visible during live matches
               </Text>
             </Box>
             <Switch />
@@ -232,6 +232,11 @@ const MoreHome = () => {
             <FontAwesome6 name="facebook" size={32} color={"#1877F2"} />
             <FontAwesome5 name="instagram" size={32} color="rgb(214,41,118)" />
             <Entypo name="youtube-with-circle" size={32} color={"#FF0000"} />
+          </HStack>
+          <Divider />
+          <HStack mb={5} space={2} justifyContent={"center"} alignItems={"center"}>
+            <Octicons name="versions" size={24} color="#fff" />
+            <Text>Version: 1.0</Text>
           </HStack>
         </VStack>
       </ScrollView>
