@@ -9,30 +9,24 @@ const ChangePassword = () => {
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const dispatch = useAppDispatch();
-  const [curErr, setCurErr] = useState<string>("");
   const { loading, error } = useAppSelector((state) => state.auth);
   const toast = useToast();
   const nav = useNavigation();
   function handleChangePassword() {
-    if (currentPassword !== newPassword) {
-      return setCurErr("Passwords does not match!");
-    } else {
-      setCurErr("");
-      dispatch(changePassword({ currentPassword, newPassword })).then(() => {
-        if (!error) {
-          toast.show({
-            render: () => {
-              return (
-                <Box bg="#5E41E6" px="4" py="2" rounded="sm" mb={5}>
-                  <Text fontSize={"lg"}>Password changed successfully!</Text>
-                </Box>
-              );
-            },
-          });
-          nav.goBack();
-        }
-      });
-    }
+    dispatch(changePassword({ currentPassword, newPassword })).then(() => {
+      if (!error) {
+        toast.show({
+          render: () => {
+            return (
+              <Box bg="#5E41E6" px="4" py="2" rounded="sm" mb={5}>
+                <Text fontSize={"lg"}>Password changed successfully!</Text>
+              </Box>
+            );
+          },
+        });
+        nav.goBack();
+      }
+    });
   }
   return (
     <View flex={1} justifyContent={"center"} alignItems={"center"}>
@@ -51,19 +45,16 @@ const ChangePassword = () => {
             autoCapitalize="none"
             onChangeText={(e) => setCurrentPassword(e)}
           />
-          <VStack space={2}>
-            <Input
-              placeholder="Enter new password"
-              type="password"
-              autoCapitalize="none"
-              leftElement={
-                <SimpleLineIcons name="lock" size={24} color="white" style={{ marginLeft: 12 }} />
-              }
-              value={newPassword}
-              onChangeText={(e) => setNewPassword(e)}
-            />
-            {curErr && <Text color={"red.500"}>{curErr}</Text>}
-          </VStack>
+          <Input
+            placeholder="Enter new password"
+            type="password"
+            autoCapitalize="none"
+            leftElement={
+              <SimpleLineIcons name="lock" size={24} color="white" style={{ marginLeft: 12 }} />
+            }
+            value={newPassword}
+            onChangeText={(e) => setNewPassword(e)}
+          />
           <Button mx={8} isLoading={!!loading} disabled={!!loading} onPress={handleChangePassword}>
             UPDATE
           </Button>

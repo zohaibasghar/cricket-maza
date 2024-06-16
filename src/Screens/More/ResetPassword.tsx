@@ -2,7 +2,7 @@ import { SimpleLineIcons } from "@expo/vector-icons";
 import { View, Text, Input, Card, VStack, Button, useToast, Box } from "native-base";
 import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/Store";
-import { changePassword } from "../../redux/actions/authActions";
+import { changePassword, resetPassword } from "../../redux/actions/authActions";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { addError } from "../../redux/errorSlice";
 import uuid from "../../utils/uuid";
@@ -25,7 +25,7 @@ const ResetPassword = () => {
       return setCurErr("Passwords does not match!");
     } else {
       setCurErr("");
-      dispatch(changePassword({ currentPassword, newPassword, email })).then(() => {
+      dispatch(resetPassword({ newPassword, email })).then(() => {
         if (!error) {
           toast.show({
             render: () => {

@@ -26,19 +26,20 @@ const Login = () => {
   const { loading, error } = useAppSelector((state) => state.auth);
   const toast = useToast();
   const handleLogin = () => {
-    dispatch(login(form));
-    if (error) return;
-    toast.show({
-      title: "Logged in!",
-      render: () => {
-        return (
-          <Box bg="#5E41E6" px="4" py="2" rounded="sm" mb={5}>
-            <Text fontSize={"lg"}>You are logged in!</Text>
-          </Box>
-        );
-      },
+    dispatch(login(form)).then(() => {
+      if (error) return;
+      toast.show({
+        title: "Logged in!",
+        render: () => {
+          return (
+            <Box bg="#5E41E6" px="4" py="2" rounded="sm" mb={5}>
+              <Text fontSize={"lg"}>You are logged in!</Text>
+            </Box>
+          );
+        },
+      });
+      nav.navigate("HomeTabs", { screen: "More" });
     });
-    nav.navigate("HomeTabs", { screen: "More" });
   };
 
   return (

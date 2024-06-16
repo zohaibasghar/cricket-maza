@@ -44,14 +44,25 @@ export const fetchUser = createAsyncThunk(
 
 export const changePassword = createAsyncThunk(
   "user/change-password",
-  async (
-    body: { currentPassword: string; newPassword: string; email?: string },
-    { rejectWithValue, dispatch },
-  ) => {
+  async (body: { currentPassword: string; newPassword: string }, { rejectWithValue, dispatch }) => {
     try {
       const res = await axiosInstance.patch("/auth/change-password", body);
       return res;
     } catch (error: any) {
+      dispatch(addError({ status: "error", title: error.response.data.error }));
+      return rejectWithValue(error.response.data.error);
+    }
+  },
+);
+
+export const resetPassword = createAsyncThunk(
+  "user/reset-password",
+  async (body: { newPassword: string; email: string }, { rejectWithValue, dispatch }) => {
+    try {
+      const res = await axiosInstance.patch("/auth/reset-password", body);
+      return res;
+    } catch (error: any) {
+      console.log(error.response.data)
       dispatch(addError({ status: "error", title: error.response.data.error }));
       return rejectWithValue(error.response.data.error);
     }

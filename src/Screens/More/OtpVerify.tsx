@@ -34,6 +34,7 @@ const OtpVerify = () => {
           </VStack>
           <HStack space={2} justifyContent="center">
             <Input
+              fontSize={"lg"}
               w="80%"
               maxLength={6}
               keyboardType="numeric"

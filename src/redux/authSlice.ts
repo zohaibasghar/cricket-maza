@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { changePassword, fetchUser, login, registerUser } from "./actions/authActions";
+import { changePassword, fetchUser, login, registerUser, resetPassword } from "./actions/authActions";
 import axiosInstance from "../config/axios";
 import { removeToken, storeToken } from "../storage/storage";
 interface AppState {
@@ -123,6 +123,17 @@ export const authSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(changePassword.fulfilled, (state) => {
+        state.loading = 0;
+      })
+      .addCase(resetPassword.pending, (state) => {
+        state.loading = 1;
+        state.error = "";
+      })
+      .addCase(resetPassword.rejected, (state, action) => {
+        state.loading = 0;
+        state.error = action.error.message;
+      })
+      .addCase(resetPassword.fulfilled, (state) => {
         state.loading = 0;
       });
   },
