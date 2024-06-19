@@ -3,11 +3,13 @@ import { Provider, TypedUseSelectorHook, useDispatch, useSelector } from "react-
 import React from "react";
 import authReducer from "./authSlice";
 import errorsReducer from "./errorSlice";
+import { matchReducer } from "./matchSlice";
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     errors: errorsReducer,
+    matches: matchReducer,
   },
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware({

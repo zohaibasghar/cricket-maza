@@ -1,12 +1,15 @@
-import { useNavigation } from "@react-navigation/native";
 import { View, ScrollView, Text } from "native-base";
-import React from "react";
+import React, { useEffect } from "react";
 import MatchCard from "../../Components/MatchCard";
 import TrendingSeries from "../../Components/TrendingSeries";
 import LatestVideos from "../../Components/LatestVideos";
 import Headlines from "../../Components/Headlines";
 import Header from "../../Components/Header";
 import { AntDesign } from "@expo/vector-icons";
+import { useAppDispatch, useAppSelector } from "../../redux/Store";
+import { getAllMatches } from "../../redux/actions/matchActions";
+import PagerView from "react-native-pager-view";
+import { ActivityIndicator } from "react-native";
 
 const matchData = {
   team1: {
@@ -25,13 +28,33 @@ const matchData = {
 };
 
 const Dashboard = () => {
-  const nav = useNavigation();
+  const { matches, leagueLoading } = useAppSelector((state) => state.matches);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getAllMatches());
+  }, []);
+
   return (
     <View flex={1}>
+      {/* {leagueLoading && (
+        <ActivityIndicator
+          size={"large"}
+          style={{
+            position: "absolute",
+            zIndex: 99,
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            backgroundColor: "#0008",
+          }}
+        />
+      )} */}
       <ScrollView>
         <Header
           left={
-            <Text fontSize="xl" color="white" fontFamily={'es_bold'}>
+            <Text fontSize="xl" color="white" fontFamily={"es_bold"}>
               Logo
             </Text>
           }
@@ -39,15 +62,22 @@ const Dashboard = () => {
           right={<AntDesign name="sharealt" size={24} color="white" />}
           filter
         />
-        <MatchCard
-          team1={matchData.team1}
-          team2={matchData.team2}
-          percentage1={matchData.team1.percentage}
-          percentage2={matchData.team2.percentage}
-          score1={matchData.score1}
-          score2={matchData.score2}
-          matchTime={matchData.matchTime}
-        />
+        <PagerView style={{ flex: 1, height: 270 }} initialPage={0}>
+          {matches?.map((match) => (
+            <View key={match.id} w={"100%"}>
+              <MatchCard
+                team1={matchData.team1}
+                match={match}
+                team2={matchData.team2}
+                percentage1={matchData.team1.percentage}
+                percentage2={matchData.team2.percentage}
+                score1={matchData.score1}
+                score2={matchData.score2}
+                matchTime={matchData.matchTime}
+              />
+            </View>
+          ))}
+        </PagerView>
         <TrendingSeries />
         <LatestVideos />
         <Headlines />
