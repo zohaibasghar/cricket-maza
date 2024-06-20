@@ -21,3 +21,16 @@ export interface TeamInfo {
   shortname: string
   img: string
 }
+
+export interface SeriesDTO {
+  id: string
+  name: string
+  startDate: string
+  endDate: string
+  odi: number
+  t20: number
+  test: number
+  squads: number
+  matches: number
+}
+

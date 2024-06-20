@@ -2,8 +2,10 @@ import React from "react";
 import { HStack, Image, Text, VStack } from "native-base";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { SeriesDTO } from "../interfaces/Matches.dto";
+import { format, formatDate } from "date-fns";
 
-const SeriesCard = () => {
+const SeriesCard = ({ series }: { series: SeriesDTO }) => {
   const nav = useNavigation();
   return (
     <TouchableOpacity onPress={() => nav.navigate("HomeStack", { screen: "SeriesDetail" })}>
@@ -16,7 +18,7 @@ const SeriesCard = () => {
         space={1}
         alignItems={"center"}
       >
-        <HStack alignItems={"center"} space={2}>
+        <HStack alignItems={"center"} space={2} w={"60%"}>
           <Image
             source={{
               uri: "https://c4.wallpaperflare.com/wallpaper/246/739/689/digital-digital-art-artwork-illustration-abstract-hd-wallpaper-preview.jpg",
@@ -26,15 +28,17 @@ const SeriesCard = () => {
             h={"10"}
             rounded={"lg"}
           />
-          <VStack>
-            <Text fontSize={12}>Mens T20 World Cup 2024</Text>
+          <VStack w={'77%'}>
+            <Text fontSize={12} isTruncated>
+              {series?.name}
+            </Text>
             <Text fontSize={"2xs"} color={"gray.400"}>
-              01 June 2024 To 29 June 2024
+              {format(new Date(series?.startDate), "dd MMMM yyyy")}
             </Text>
           </VStack>
         </HStack>
         <HStack space={1} alignItems={"center"}>
-          <Text fontSize={"xl"}>55</Text>
+          <Text fontSize={"xl"}>{series?.matches}</Text>
           <VStack>
             <Text fontSize={8} color={"gray.300"}>
               Total
@@ -45,7 +49,7 @@ const SeriesCard = () => {
           </VStack>
         </HStack>
         <HStack space={1} alignItems={"center"}>
-          <Text fontSize={"xl"}>52</Text>
+          <Text fontSize={"xl"}>{series?.matches - series?.squads}</Text>
           <VStack>
             <Text fontSize={8} color={"gray.300"}>
               Matches

@@ -62,7 +62,7 @@ const Dashboard = () => {
           right={<AntDesign name="sharealt" size={24} color="white" />}
           filter
         />
-        <PagerView style={{ flex: 1, height: 270 }} initialPage={0}>
+        <PagerView style={{ flex: 1, height: 170 }} initialPage={0}>
           {matches?.map((match) => (
             <View key={match.id} w={"100%"}>
               <MatchCard
